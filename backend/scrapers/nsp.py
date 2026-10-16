@@ -41,7 +41,8 @@ from backend.scrapers.base import (
 
 log = logging.getLogger(__name__)
 
-LIST_URL = "https://scholarships.gov.in/All-Scholarships"
+BASE_URL = "https://scholarships.gov.in"
+LIST_URL = f"{BASE_URL}/All-Scholarships"
 
 # NSP has no public per-scheme page: you pick the scheme after an OTR login.
 # This is the closest legitimate deep link (spec §6), and the UI shows a note
@@ -68,7 +69,19 @@ def _is_usable_link(href: str | None) -> bool:
     href = href.strip()
     if not href or href.lower().startswith("javascript:"):
         return False
+    # The portal renders a missing document either as a bare "null" or as
+    # https://scholarships.gov.in/null.
+    if href.strip("/").lower() == "null":
+        return False
     return not any(href.rstrip().endswith(s) for s in _DEAD_LINK_SUFFIXES)
+
+
+def _absolute(href: str) -> str:
+    """Guideline PDFs are sometimes linked relatively; the UI needs a full URL."""
+    href = href.strip()
+    if href.startswith(("http://", "https://")):
+        return href
+    return f"{BASE_URL}/{href.lstrip('/')}"
 
 
 def _ministry_for(block: Tag) -> str | None:
@@ -127,10 +140,10 @@ def parse_nsp_html(html: str) -> list[ScrapedScholarship]:
             label = normalize_space(link.get_text(" ", strip=True)).lower()
             href = link.get("href")
             if label.startswith("specification") and _is_usable_link(href):
-                info_url = href.strip()
+                info_url = _absolute(href)
                 break
 
-        tags = infer_tags(f"{raw_title} {text}")
+        tags = infer_tags(raw_title, text)
         lowered = raw_title.lower()
         if "merit based scheme" in lowered and "merit" not in tags:
             tags.append("merit")

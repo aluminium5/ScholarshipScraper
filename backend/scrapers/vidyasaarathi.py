@@ -184,7 +184,7 @@ def parse_vidyasaarathi_html(html: str) -> list[ScrapedScholarship]:
                     normalize_space(award_match.group(1))[:300] if award_match else None
                 ),
                 level=guess_level(f"{title} {text}"),
-                tags=infer_tags(f"{title} {text}"),
+                tags=infer_tags(title, text),
                 description=(
                     "Corporate-funded scholarship listed on Vidyasaarathi. "
                     "Applying requires a Vidyasaarathi login."
