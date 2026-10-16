@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Local database
+*.db
+*.sqlite3
+
+# Env
+.env
+.env.local
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Vercel
+.vercel
+
+# Editors / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
