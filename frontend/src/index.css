@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+  /* Visible focus for keyboard users without a ring on every mouse click. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-500 ring-offset-2 ring-offset-white;
+  }
+}
+
+@layer components {
+  /* Soft 1px borders over heavy shadows, per the brief. */
+  .card {
+    @apply rounded-lg border border-slate-200 bg-white;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-2
+           text-sm font-medium transition-colors disabled:cursor-not-allowed
+           disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-accent-600 text-white hover:bg-accent-700;
+  }
+  .btn-secondary {
+    @apply btn border border-slate-300 bg-white text-slate-700 hover:bg-slate-50;
+  }
+  .btn-ghost {
+    @apply btn text-slate-600 hover:bg-slate-100;
+  }
+  .input {
+    @apply w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm
+           text-slate-900 placeholder:text-slate-400
+           focus:border-accent-500 focus:outline-none focus:ring-1
+           focus:ring-accent-500;
+  }
+  .label {
+    @apply mb-1.5 block text-xs font-medium uppercase tracking-wide text-slate-500;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full border px-3 py-1 text-xs
+           font-medium transition-colors;
+  }
+  .chip-off {
+    @apply chip border-slate-200 bg-white text-slate-600 hover:border-slate-300
+           hover:bg-slate-50;
+  }
+  .chip-on {
+    @apply chip border-accent-600 bg-accent-600 text-white;
+  }
+}
