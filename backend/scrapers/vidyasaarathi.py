@@ -1,26 +1,46 @@
 """Vidyasaarathi scraper (spec §7.3).
 
-STATUS: UNVERIFIED. The host refused every connection from the development
-machine on 17 Oct 2026 (TLS reset, not an HTTP error), so the live markup could
-not be inspected and there is no HTML fixture. The selectors below follow the
-structure described in the spec and are deliberately defensive: anything that
-does not yield a scholarship-specific detail link is skipped.
+Verified against the live portal on 17 Oct 2026.
 
-The spec also records that on 16 Oct 2026 the "Open Schemes" tab read
-"Currently No Schemes are Available." An empty list is therefore an expected,
-non-error outcome and must return [] quietly.
+The page is server-rendered Java/Spring, but the scheme cards are *not* in the
+HTML: the open schemes are embedded in the page as a JavaScript array literal,
 
-Verify after deploying (Vercel egress differs from a home connection):
-    GET /api/cron/refresh  ->  check summary["vidyasaarathi"]["errors"]
+    var a=[{"smScholarshipName": ..., "smSchemeEndDate": "30/10/2026", ...}, ...];
+
+which the page's own getOpenSchemes()/getSchemeList() functions render into
+cards. Closed schemes come separately from an AJAX call to getClosedSchemes,
+which this scraper ignores.
+
+Two traps worth recording, both of which produced wrong results first time:
+
+1. The string "Currently No Schemes are Available" is always present, because it
+   is the else-branch inside the renderer's JavaScript source. Testing for it in
+   the raw page text reports "no schemes" even when 15 are open. The empty check
+   therefore runs against the page with <script> and <style> stripped out.
+2. The page is served as ISO-8859-1 and contains cp1252 bytes (0x92 smart
+   quotes), so decoding it as UTF-8 raises. The response encoding is pinned to
+   cp1252, which is a superset of latin-1 for these bytes.
+
+Deep links
+----------
+Each record carries smSchemeStaticHtmlFileName ("1765_12.html") and the page
+builds a detail URL as resources/<smEntityCode>/<smSchemeId>_<version>.html.
+Every such URL 404s without a session, so there is no usable per-scheme public
+page. As with NSP (spec §6), apply_url is therefore the scheme *listing* page --
+a real path, never the bare homepage -- and the UI shows a note telling the
+student which scheme to select after logging in. `otr_note`-style guidance is
+carried in the description.
 """
 
 from __future__ import annotations
 
+import json
 import logging
 import re
+from datetime import date
 
 import httpx
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 
 from backend.scrapers.base import (
     BaseScraper,
@@ -38,6 +58,9 @@ log = logging.getLogger(__name__)
 BASE_URL = "https://www.vidyasaarathi.co.in"
 LIST_URL = f"{BASE_URL}/Vidyasaarathi/scholarship"
 
+#: Where Apply sends the student: the Open Schemes listing, not the homepage.
+APPLY_URL = LIST_URL
+
 _EMPTY_MARKERS = (
     "currently no schemes are available",
     "no schemes are available",
@@ -45,162 +68,167 @@ _EMPTY_MARKERS = (
     "no records found",
 )
 
-_DEADLINE_LABEL = re.compile(
-    r"(?:last date|closing date|apply before|last day|end date)\s*:?\s*"
-    r"([0-3]?\d[-/.][01]?\d[-/.]\d{4}|[0-3]?\d\s+[A-Za-z]{3,9},?\s+\d{4})",
-    re.IGNORECASE,
-)
-_OPENS_LABEL = re.compile(
-    r"(?:start date|opens? on|start)\s*:?\s*"
-    r"([0-3]?\d[-/.][01]?\d[-/.]\d{4}|[0-3]?\d\s+[A-Za-z]{3,9},?\s+\d{4})",
-    re.IGNORECASE,
-)
-_AWARD_LABEL = re.compile(
-    r"(?:amount|award|scholarship value|benefit)\s*:?\s*"
-    r"((?:rs\.?|inr|₹)\s*[\d,]+(?:\s*(?:lakh|lakhs|crore|per annum|p\.a\.?))?)",
-    re.IGNORECASE,
-)
+#: The server-embedded open-schemes array.
+_OPEN_ARRAY = re.compile(r"var\s+a\s*=\s*(\[.*?\])\s*;\s*[\r\n]", re.S)
 
-# A detail URL must look scheme-specific; a bare listing/home path is rejected.
-_DETAIL_HINTS = ("scheme", "scholarship", "detail", "apply", "program")
-_NON_DETAIL = {
-    "/vidyasaarathi/scholarship",
-    "/vidyasaarathi/scholarship/",
-    "/vidyasaarathi",
-    "/vidyasaarathi/",
-    "/",
-}
+_GENDER_TAGS = {"F": "girls", "M": None, "A": None}
 
 
-def _absolute(href: str) -> str:
-    if href.startswith(("http://", "https://")):
-        return href
-    return f"{BASE_URL}/{href.lstrip('/')}"
+def _visible_text(html: str) -> str:
+    """Page text with scripts and styles removed.
+
+    The empty-state message lives in JavaScript, so it must not be read from
+    the raw source (see the module docstring).
+    """
+    soup = BeautifulSoup(html, "lxml")
+    for node in soup(["script", "style", "noscript"]):
+        node.decompose()
+    return normalize_space(soup.get_text(" ", strip=True)).lower()
 
 
-def _is_detail_link(href: str | None) -> bool:
-    """True only for a link that plausibly points at one scheme."""
-    if not href:
-        return False
-    href = href.strip()
-    if not href or href.startswith(("#", "javascript:", "mailto:")):
-        return False
+def _amount(raw: object) -> str | None:
+    """Format a rupee amount from the portal's numeric strings."""
+    if raw in (None, "", "null"):
+        return None
+    try:
+        value = float(str(raw))
+    except (TypeError, ValueError):
+        return normalize_space(str(raw))[:300] or None
+    if value <= 0:
+        return None
+    # Indian grouping reads better than a bare float here.
+    return f"INR {int(round(value)):,}"
 
-    path = re.sub(r"^https?://[^/]+", "", href).split("?")[0].split("#")[0]
-    if path.lower().rstrip("/") in {p.rstrip("/") for p in _NON_DETAIL}:
-        return False
-    lowered = href.lower()
-    if not any(h in lowered for h in _DETAIL_HINTS):
-        return False
-    # Require something that distinguishes one scheme: an id, a query arg or a
-    # deeper path segment than the listing itself.
-    return bool(
-        re.search(r"\d", path) or "?" in href or path.count("/") >= 3
+
+def _clean_blurb(raw: object, limit: int = 900) -> str | None:
+    if raw in (None, "", "null"):
+        return None
+    value = str(raw)
+    # Only hand it to the HTML parser when it actually looks like markup;
+    # a short plain string makes BeautifulSoup warn about filenames.
+    if "<" in value and ">" in value:
+        value = BeautifulSoup(value, "lxml").get_text(" ", strip=True)
+    text = normalize_space(value)
+    if not text:
+        return None
+    return text[: limit - 1] + "…" if len(text) > limit else text
+
+
+def _map_record(raw: dict, today: date) -> ScrapedScholarship | None:
+    if not isinstance(raw, dict):
+        return None
+
+    title = _clean_blurb(raw.get("smScholarshipName"), limit=400)
+    if not title or len(title) < 6:
+        return None
+
+    deadline = parse_date(raw.get("smSchemeEndDate"))
+    if deadline is not None and deadline < today:
+        return None
+
+    provider = _clean_blurb(raw.get("smEntityName"), limit=200)
+    description = _clean_blurb(
+        raw.get("smSchemeDesc") or raw.get("smScholarshipDesc"), limit=700
+    )
+
+    eligibility_bits: list[str] = []
+    if raw.get("smSchemeStateCriteriaValue"):
+        eligibility_bits.append(f"State: {raw['smSchemeStateCriteriaValue']}")
+    if raw.get("smSchemeMinPercentageCriteria"):
+        eligibility_bits.append(
+            f"Minimum marks: {raw['smSchemeMinPercentageCriteria']}%"
+        )
+    income = _amount(raw.get("smFamilyIncomeMax"))
+    if income:
+        eligibility_bits.append(f"Family income up to {income}")
+    certificates = _clean_blurb(raw.get("smRequiredCertificatesInstruction"), limit=500)
+    if certificates:
+        eligibility_bits.append(certificates)
+    eligibility = " | ".join(eligibility_bits) or None
+
+    scheme_id = str(raw.get("smSchemeId") or "").strip()
+    external_id = scheme_id or stable_id("vidyasaarathi", title)
+
+    tags = infer_tags(title, " ".join(filter(None, [description, eligibility])))
+    gender_tag = _GENDER_TAGS.get(str(raw.get("smSchemeGenderCriteria") or "").upper())
+    if gender_tag and gender_tag not in tags:
+        tags.append(gender_tag)
+    if income and "need" not in tags:
+        tags.append("need")
+
+    # The portal has no public per-scheme page, so tell the student exactly
+    # which scheme to pick after logging in (same pattern as NSP's OTR note).
+    note = (
+        "Vidyasaarathi requires a login. Open the Open Schemes tab and select: "
+        f"{title}"
+    )
+    return ScrapedScholarship(
+        source="vidyasaarathi",
+        external_id=external_id,
+        title=title,
+        provider=provider,
+        apply_url=APPLY_URL,
+        info_url=APPLY_URL,
+        deadline=deadline,
+        opens_at=parse_date(raw.get("smSchemeStartDate")),
+        award_amount=_amount(raw.get("smScholarshipAmount")),
+        eligibility=eligibility,
+        description=" ".join(filter(None, [description, note])),
+        level=guess_level(f"{title} {description or ''}"),
+        tags=tags,
     )
 
 
-def _card_title(card: Tag) -> str | None:
-    for selector in ("h1", "h2", "h3", "h4", "h5", "h6", ".scheme-name", ".card-title"):
-        node = card.select_one(selector)
-        if node is not None:
-            text = normalize_space(node.get_text(" ", strip=True))
-            if len(text) >= 8:
-                return text
-    # Fall back to the anchor's own text.
-    link = card.find("a", href=True)
-    if link is not None:
-        text = normalize_space(link.get_text(" ", strip=True))
-        if len(text) >= 8:
-            return text
-    return None
+def parse_open_schemes(html: str, today: date | None = None) -> list[ScrapedScholarship]:
+    """Parse the embedded open-schemes array. Returns [] when none are open."""
+    today = today or date.today()
 
-
-def parse_vidyasaarathi_html(html: str) -> list[ScrapedScholarship]:
-    """Parse the Open Schemes listing. Returns [] when no schemes are listed."""
-    soup = BeautifulSoup(html, "lxml")
-
-    page_text = normalize_space(soup.get_text(" ", strip=True)).lower()
-    if any(marker in page_text for marker in _EMPTY_MARKERS):
-        log.info("vidyasaarathi: portal reports no open schemes")
+    match = _OPEN_ARRAY.search(html)
+    if match is None:
+        # No array at all: only then is the rendered empty-state meaningful.
+        if any(marker in _visible_text(html) for marker in _EMPTY_MARKERS):
+            log.info("vidyasaarathi: portal reports no open schemes")
+        else:
+            log.warning(
+                "vidyasaarathi: could not find the embedded open-schemes array; "
+                "the page layout may have changed"
+            )
         return []
 
-    # Candidate cards: any container holding a plausible scheme detail link.
-    candidates: list[Tag] = []
-    for link in soup.find_all("a", href=True):
-        if not _is_detail_link(link.get("href")):
-            continue
-        container = link
-        for _ in range(4):
-            parent = container.parent
-            if not isinstance(parent, Tag):
-                break
-            container = parent
-            classes = " ".join(parent.get("class") or []).lower()
-            if any(c in classes for c in ("card", "scheme", "panel", "item", "row")):
-                break
-        if container not in candidates:
-            candidates.append(container)
+    try:
+        records = json.loads(match.group(1))
+    except json.JSONDecodeError as exc:
+        log.warning("vidyasaarathi: embedded scheme array is not valid JSON: %s", exc)
+        return []
+
+    if not isinstance(records, list):
+        return []
 
     results: list[ScrapedScholarship] = []
     seen: set[str] = set()
-
-    for card in candidates:
-        link = next(
-            (a for a in card.find_all("a", href=True) if _is_detail_link(a["href"])),
-            None,
-        )
-        if link is None:
+    for raw in records:
+        mapped = _map_record(raw, today)
+        if mapped is None or mapped.external_id in seen:
             continue
+        seen.add(mapped.external_id)
+        results.append(mapped)
 
-        title = _card_title(card)
-        if not title:
-            continue
-
-        apply_url = _absolute(link["href"].strip())
-        text = normalize_space(card.get_text(" ", strip=True))
-
-        deadline_match = _DEADLINE_LABEL.search(text)
-        opens_match = _OPENS_LABEL.search(text)
-        award_match = _AWARD_LABEL.search(text)
-
-        external_id = stable_id("vidyasaarathi", title)
-        if external_id in seen:
-            continue
-        seen.add(external_id)
-
-        results.append(
-            ScrapedScholarship(
-                source="vidyasaarathi",
-                external_id=external_id,
-                title=title,
-                # The sponsoring company is the useful provider here, but the
-                # markup is unconfirmed, so leave it unset rather than guess.
-                provider=None,
-                apply_url=apply_url,
-                info_url=apply_url,
-                deadline=parse_date(deadline_match.group(1)) if deadline_match else None,
-                opens_at=parse_date(opens_match.group(1)) if opens_match else None,
-                award_amount=(
-                    normalize_space(award_match.group(1))[:300] if award_match else None
-                ),
-                level=guess_level(f"{title} {text}"),
-                tags=infer_tags(title, text),
-                description=(
-                    "Corporate-funded scholarship listed on Vidyasaarathi. "
-                    "Applying requires a Vidyasaarathi login."
-                ),
-            )
-        )
-
-    log.info("vidyasaarathi: parsed %s schemes", len(results))
+    log.info(
+        "vidyasaarathi: %s open schemes (%s embedded records)", len(results), len(records)
+    )
     return results
+
+
+#: Kept for the previous name used by tests and callers.
+parse_vidyasaarathi_html = parse_open_schemes
 
 
 class VidyasaarathiScraper(BaseScraper):
     source = "vidyasaarathi"
-    verified = False
+    verified = True
 
     def fetch(self, client: httpx.Client) -> list[ScrapedScholarship]:
         response = get_with_retries(client, LIST_URL)
-        response.encoding = response.encoding or "utf-8"
-        return parse_vidyasaarathi_html(response.text)
+        # Served as ISO-8859-1 with cp1252 bytes; decoding as UTF-8 raises.
+        response.encoding = "cp1252"
+        return parse_open_schemes(response.text)

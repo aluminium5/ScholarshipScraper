@@ -5,6 +5,7 @@
     "note": "Curated fallback loaded only when the scholarships table is empty. Real deadlines go stale: regenerate this file when the dated entries have passed. Entries with a null deadline were verified to exist but had no deadline confirmable from an official page, so none was invented.",
     "counts": {
       "buddy4study": 37,
+      "vidyasaarathi": 15,
       "nsp": 18,
       "manual": 7
     }
@@ -145,6 +146,278 @@
       "tags": [
         "need",
         "technical"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1765",
+      "title": "JSW UDAAN Renewal Scholarship for Odisha Students pursuing Post Graduate Degree courses (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 50,000",
+      "eligibility": "State: ODISHA | Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Odisha Students pursuing Post Graduate Degree courses (2026-2027)",
+      "level": "pg",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1761",
+      "title": "JSW UDAAN Renewal Scholarship for Odisha Students pursuing Fulltime B.E./B.Tech (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 50,000",
+      "eligibility": "State: ODISHA | Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Odisha Students pursuing Fulltime B.E./B.Tech (2026-2027)",
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal",
+        "technical"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1792",
+      "title": "JSW UMEED Renewal Scholarship for Students Pursuing Class 11 (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-30",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 12,000",
+      "eligibility": "Family income up to INR 800,000 | Documents Required: 1) Current year paid fees receipt only 2) Bonafide certificate from school 3) Previous year Marksheet All documents uploaded shall be clear and must be in .jpeg .png file only Optional document PAN No/Domicile certificate",
+      "description": "JSW Umeed Scholarship program is an initiative of JSW Foundation to support students who are at the risk of dropping out of education as they have very little no financial support for their further education owing to a COVID-led crisis (family financial) in their family. Due to pandemic more than 1.5 million schools were closed which affected 247 million children enrolled in elementary and secondary schools, which further added to the risk of them slipping into child labor and unsafe migration. JSW Umeed Scholarship program will assist such affected students with scholarships for them to continue their education without any hindrance. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UMEED Renewal Scholarship for Students Pursuing Class 11 (2026-2027)",
+      "level": "school",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1764",
+      "title": "JSW UDAAN Renewal Scholarship for Odisha Students pursuing Under Graduate Degree courses(2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 30,000",
+      "eligibility": "State: ODISHA | Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Odisha Students pursuing Under Graduate Degree courses(2026-2027)",
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1760",
+      "title": "JSW UDAAN Renewal Scholarship for Students pursuing Post Graduate Degree courses (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 50,000",
+      "eligibility": "Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Students pursuing Post Graduate Degree courses (2026-2027)",
+      "level": "pg",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1756",
+      "title": "JSW UDAAN Renewal Scholarship for Students pursuing Fulltime B.E/B.Tech (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 50,000",
+      "eligibility": "Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Students pursuing Fulltime B.E/B.Tech (2026-2027)",
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal",
+        "technical"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1759",
+      "title": "JSW UDAAN Renewal Scholarship for Students pursuing Under Graduate Degree courses (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 30,000",
+      "eligibility": "Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Students pursuing Under Graduate Degree courses (2026-2027)",
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1758",
+      "title": "JSW UDAAN Renewal Scholarship for Students pursuing Medical courses (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 50,000",
+      "eligibility": "Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Students pursuing Medical courses (2026-2027)",
+      "level": "any",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1757",
+      "title": "JSW UDAAN Renewal Scholarship for Students pursuing Fulltime Diploma (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 10,000",
+      "eligibility": "Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Students pursuing Fulltime Diploma (2026-2027)",
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1763",
+      "title": "JSW UDAAN Renewal Scholarship for Odisha Students pursuing Medical courses (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 50,000",
+      "eligibility": "State: ODISHA | Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Odisha Students pursuing Medical courses (2026-2027)",
+      "level": "any",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1762",
+      "title": "JSW UDAAN Renewal Scholarship for Odisha Students pursuing Fulltime Diploma (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 10,000",
+      "eligibility": "State: ODISHA | Family income up to INR 800,000 | Documents Required : 1) Current year paid fees receipt only 2) Admission Letter / Bonafide certificate from institute 3) Latest College Marksheets All documents uploaded shall be clear and must be in .jpeg .png file only",
+      "description": "JSW UDAAN is a flagship scholarship programme of JSW Foundation. This scholarship program is designed for helping students residing near the various JSW plant locations who cannot afford quality education due to the high fees structure. UDAAN scholarships would encourages them to counter their financial constraints and pursue academic excellence and career opportunities. This scholarship would not be applicable for JSW employees and their children. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UDAAN Renewal Scholarship for Odisha Students pursuing Fulltime Diploma (2026-2027)",
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1768",
+      "title": "JSW UMEED Renewal Scholarship for Students pursuing Under Graduate (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 50,000",
+      "eligibility": "Family income up to INR 800,000 | 1) Current year paid fees receipt only 2) Bonafide certificate from school 3) Previous year Marksheet All documents uploaded shall be clear and must be in .jpeg .png file only Optional document PAN No/Domicile certificate",
+      "description": "JSW Umeed Scholarship program is an initiative of JSW Foundation to support students who are at the risk of dropping out of education as they have very little no financial support for their further education owing to a COVID-led crisis (family financial) in their family. Due to pandemic more than 1.5 million schools were closed which affected 247 million children enrolled in elementary and secondary schools, which further added to the risk of them slipping into child labor and unsafe migration. JSW Umeed Scholarship program will assist such affected students with scholarships for them to continue their education without any hindrance. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UMEED Renewal Scholarship for Students pursuing Under Graduate (2026-2027)",
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1769",
+      "title": "JSW UMEED Renewal Scholarship for Students pursuing Diploma (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 10,000",
+      "eligibility": "Family income up to INR 800,000 | 1) Current year paid fees receipt only 2) Bonafide certificate from school 3) Previous year Marksheet All documents uploaded shall be clear and must be in .jpeg .png file only Optional document PAN No/Domicile certificate",
+      "description": "JSW Umeed Scholarship program is an initiative of JSW Foundation to support students who are at the risk of dropping out of education as they have very little no financial support for their further education owing to a COVID-led crisis (family financial) in their family. Due to pandemic more than 1.5 million schools were closed which affected 247 million children enrolled in elementary and secondary schools, which further added to the risk of them slipping into child labor and unsafe migration. JSW Umeed Scholarship program will assist such affected students with scholarships for them to continue their education without any hindrance. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UMEED Renewal Scholarship for Students pursuing Diploma (2026-2027)",
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1766",
+      "title": "JSW UMEED Renewal Scholarship for Students pursuing class 1 to class 10 (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 10,000",
+      "eligibility": "Family income up to INR 800,000 | Documents Required: 1) Current year paid fees receipt only 2) Bonafide certificate from school 3) Previous year Marksheet All documents uploaded shall be clear and must be in .jpeg .png file only Optional document PAN No/Domicile certificate",
+      "description": "JSW Umeed Scholarship program is an initiative of JSW Foundation to support students who are at the risk of dropping out of education as they have very little no financial support for their further education owing to a COVID-led crisis (family financial) in their family. Due to pandemic more than 1.5 million schools were closed which affected 247 million children enrolled in elementary and secondary schools, which further added to the risk of them slipping into child labor and unsafe migration. JSW Umeed Scholarship program will assist such affected students with scholarships for them to continue their education without any hindrance. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UMEED Renewal Scholarship for Students pursuing class 1 to class 10 (2026-2027)",
+      "level": "school",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "vidyasaarathi",
+      "external_id": "1767",
+      "title": "JSW UMEED Renewal Scholarship for Students pursuing Pre Primary (2026-2027)",
+      "apply_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "provider": "JSW Foundation",
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-04",
+      "info_url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship",
+      "award_amount": "INR 10,000",
+      "eligibility": "Family income up to INR 800,000 | 1) Current year paid fees receipt only 2) Bonafide certificate from school 3) Previous year Marksheet All documents uploaded shall be clear and must be in .jpeg .png file only Optional document PAN No/Domicile certificate",
+      "description": "JSW Umeed Scholarship program is an initiative of JSW Foundation to support students who are at the risk of dropping out of education as they have very little no financial support for their further education owing to a COVID-led crisis (family financial) in their family. Due to pandemic more than 1.5 million schools were closed which affected 247 million children enrolled in elementary and secondary schools, which further added to the risk of them slipping into child labor and unsafe migration. JSW Umeed Scholarship program will assist such affected students with scholarships for them to continue their education without any hindrance. Vidyasaarathi requires a login. Open the Open Schemes tab and select: JSW UMEED Renewal Scholarship for Students pursuing Pre Primary (2026-2027)",
+      "level": "school",
+      "tags": [
+        "need",
+        "renewal"
       ]
     },
     {

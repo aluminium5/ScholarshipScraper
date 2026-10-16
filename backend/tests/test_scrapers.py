@@ -27,7 +27,10 @@ from backend.scrapers.buddy4study import (
     parse_sitemap,
 )
 from backend.scrapers.nsp import APPLY_URL, parse_nsp_html
-from backend.scrapers.vidyasaarathi import parse_vidyasaarathi_html
+from backend.scrapers.vidyasaarathi import (
+    parse_open_schemes,
+    parse_vidyasaarathi_html,
+)
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -331,42 +334,69 @@ class TestBuddy4StudyParser:
 
 # ------------------------------------------------------------- Vidyasaarathi
 class TestVidyasaarathiParser:
-    def test_no_schemes_message_returns_empty(self) -> None:
-        html = """<html><body><div class="tab">
-          <h3>Open Schemes</h3>
-          <p>Currently No Schemes are Available.</p>
-        </div></body></html>"""
-        assert parse_vidyasaarathi_html(html) == []
+    """The open schemes live in a `var a=[...]` array embedded in the page."""
+
+    @pytest.fixture(scope="class")
+    def records(self) -> list[ScrapedScholarship]:
+        return parse_open_schemes(_fixture("vidyasaarathi_open.html"), date(2026, 10, 17))
+
+    def test_parses_the_embedded_array(self, records) -> None:
+        assert len(records) == 3
+
+    def test_fields_are_mapped(self, records) -> None:
+        for r in records:
+            assert r.source == "vidyasaarathi"
+            assert r.external_id
+            assert r.title
+            # The portal stores "JSW  Foundation"; whitespace is normalised.
+            assert r.provider == "JSW Foundation"
+            assert r.deadline == date(2026, 10, 30)
+            assert r.opens_at is not None
+            assert r.award_amount and r.award_amount.startswith("INR ")
+
+    def test_renewal_schemes_are_tagged(self, records) -> None:
+        assert all("renewal" in r.tags for r in records)
+
+    def test_income_criteria_becomes_a_need_tag_and_eligibility(self, records) -> None:
+        assert all("need" in r.tags for r in records)
+        assert any("Family income up to" in (r.eligibility or "") for r in records)
+
+    def test_external_id_is_the_scheme_id(self, records) -> None:
+        assert all(r.external_id.isdigit() for r in records)
+
+    def test_apply_url_is_the_open_schemes_listing_not_the_homepage(self, records) -> None:
+        # The portal publishes no per-scheme page (every detail URL 404s without
+        # a session), so Apply opens the Open Schemes tab, as NSP does its form.
+        for r in records:
+            assert r.apply_url == "https://www.vidyasaarathi.co.in/Vidyasaarathi/scholarship"
+            assert r.apply_url.rstrip("/") != "https://www.vidyasaarathi.co.in"
+            path = r.apply_url.split("://", 1)[1].partition("/")[2]
+            assert path.strip("/")
+
+    def test_description_tells_the_student_which_scheme_to_select(self, records) -> None:
+        for r in records:
+            assert "Open Schemes tab and select" in (r.description or "")
+            assert r.title in (r.description or "")
+
+    def test_the_empty_state_message_in_javascript_is_not_mistaken_for_no_schemes(
+        self, records
+    ) -> None:
+        # The renderer's else-branch string is present in the page source even
+        # when schemes are open; reading it naively reported zero schemes.
+        assert "Currently No Schemes are Available" in _fixture("vidyasaarathi_open.html")
+        assert len(records) == 3
+
+    def test_a_genuinely_empty_portal_returns_empty(self) -> None:
+        assert parse_open_schemes(_fixture("vidyasaarathi_empty.html")) == []
+
+    def test_closed_schemes_are_dropped(self) -> None:
+        # Far-future "today" closes every scheme in the fixture.
+        assert parse_open_schemes(_fixture("vidyasaarathi_open.html"), date(2030, 1, 1)) == []
 
     def test_empty_and_malformed_input_is_safe(self) -> None:
+        assert parse_open_schemes("") == []
+        assert parse_open_schemes("<html><body></body></html>") == []
+        assert parse_open_schemes("<script>var a=[not json];</script>") == []
+
+    def test_legacy_alias_still_works(self) -> None:
         assert parse_vidyasaarathi_html("") == []
-        assert parse_vidyasaarathi_html("<html><body></body></html>") == []
-
-    def test_listing_links_are_not_treated_as_schemes(self) -> None:
-        # Only the listing page itself is linked: nothing is scholarship-specific.
-        html = """<html><body>
-          <a href="/Vidyasaarathi/scholarship">Scholarships</a>
-          <a href="https://www.vidyasaarathi.co.in/">Home</a>
-        </body></html>"""
-        assert parse_vidyasaarathi_html(html) == []
-
-    def test_parses_a_scheme_card(self) -> None:
-        html = """<html><body>
-          <div class="scheme-card">
-            <h4>Tata Capital Pankh Scholarship for Engineering</h4>
-            <p>Sponsored by Tata Capital</p>
-            <p>Last Date : 30-11-2026</p>
-            <p>Start Date : 01-10-2026</p>
-            <p>Amount: Rs. 50,000 per annum</p>
-            <a href="/Vidyasaarathi/scholarship/detail?schemeId=4821">View details</a>
-          </div>
-        </body></html>"""
-        records = parse_vidyasaarathi_html(html)
-        assert len(records) == 1
-        record = records[0]
-        assert record.title == "Tata Capital Pankh Scholarship for Engineering"
-        assert record.deadline == date(2026, 11, 30)
-        assert record.opens_at == date(2026, 10, 1)
-        assert record.award_amount == "Rs. 50,000 per annum"
-        assert record.apply_url.endswith("/Vidyasaarathi/scholarship/detail?schemeId=4821")
-        assert record.source == "vidyasaarathi"

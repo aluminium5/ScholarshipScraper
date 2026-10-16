@@ -29,6 +29,7 @@ from pathlib import Path
 from backend.scrapers.base import ScrapedScholarship, make_client
 from backend.scrapers.buddy4study import Buddy4StudyScraper
 from backend.scrapers.nsp import NspScraper
+from backend.scrapers.vidyasaarathi import VidyasaarathiScraper
 
 log = logging.getLogger("generate_seed")
 
@@ -251,6 +252,13 @@ def main(argv: list[str] | None = None) -> int:
             entries += [_to_json(r) for r in b4s]
         except Exception:
             log.exception("buddy4study fetch failed; seeding without it")
+
+        try:
+            vs = VidyasaarathiScraper().fetch(client)
+            log.info("vidyasaarathi: %s open schemes", len(vs))
+            entries += [_to_json(r) for r in vs]
+        except Exception:
+            log.exception("vidyasaarathi fetch failed; seeding without it")
 
     entries += CURATED
 
