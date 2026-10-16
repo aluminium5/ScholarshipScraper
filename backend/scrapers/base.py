@@ -190,45 +190,92 @@ def stable_id(source: str, *parts: str) -> str:
     return digest[:16]
 
 
+_LEVEL_PATTERNS: tuple[tuple[str, str], ...] = (
+    (
+        "phd",
+        r"\bph\.?\s?d\b|doctoral|doctorate|post[- ]?doc"
+        # JRF and SRF are doctoral-level awards.
+        r"|(?:junior|senior) research fellow",
+    ),
+    (
+        "pg",
+        r"\bpost[- ]?graduat|\bpg\b|\bm\.?\s?tech\b|\bm\.?\s?sc\b|\bm\.?\s?a\b"
+        r"|\bmba\b|\bmaster",
+    ),
+    (
+        "ug",
+        r"\bunder[- ]?graduat|\bug\b|\bb\.?\s?tech\b|\bb\.?\s?sc\b|\bb\.?\s?a\b"
+        r"|\bb\.?\s?com\b|bachelor|\bdegree\b|diploma|polytechnic|\biti\b",
+    ),
+    (
+        "school",
+        r"\bclass\s*(?:1[0-2]|[1-9])\b|\bschool\b|pre[- ]?matric|post[- ]?matric"
+        r"|\bsecondary\b|\bxii\b|\bclass\s*x\b",
+    ),
+)
+
+
 def guess_level(text: str) -> str:
-    """Infer the study level from a title or eligibility blurb."""
+    """Infer the study level from a title or eligibility blurb.
+
+    Whichever level is mentioned first wins. Callers pass the title ahead of the
+    eligibility text, so the programme's own wording decides, and an aside like
+    "integrated master's" later in the criteria cannot override an
+    "undergraduate" in the title.
+    """
     t = (text or "").lower()
-    if re.search(r"\bph\.?\s?d\b|doctoral|doctorate|research fellow", t):
-        return "phd"
-    if re.search(r"\bpost[- ]?graduat|\bpg\b|\bm\.?\s?tech|\bm\.?\s?sc|\bmba\b|master", t):
-        return "pg"
-    if re.search(
-        r"\bunder[- ]?graduat|\bug\b|\bb\.?\s?tech|\bb\.?\s?sc|\bb\.?\s?a\b"
-        r"|\bb\.?\s?com|bachelor|degree|diploma|polytechnic",
-        t,
-    ):
-        return "ug"
-    if re.search(
-        r"\bclass\s*(1[0-2]|[1-9])\b|\bschool\b|pre[- ]?matric|post[- ]?matric"
-        r"|\bx\b\s*/\s*\bxii\b|secondary",
-        t,
-    ):
-        return "school"
-    return "any"
+    best: tuple[int, str] | None = None
+    for level, pattern in _LEVEL_PATTERNS:
+        match = re.search(pattern, t)
+        if match is not None and (best is None or match.start() < best[0]):
+            best = (match.start(), level)
+    return best[1] if best else "any"
 
 
-def infer_tags(text: str) -> list[str]:
-    """Derive the dashboard's filter tags from free text."""
-    t = (text or "").lower()
+#: Tags describing who a scholarship is *for*. Inferred from the title only:
+#: eligibility prose routinely names every category it does not serve.
+_AUDIENCE_TAGS: tuple[tuple[str, str], ...] = (
+    ("girls", r"\bgirls?\b|\bwomen\b|\bwoman\b|\bfemale\b|\bkanya\b|\bpragati\b"),
+    (
+        "sc_st",
+        r"scheduled caste|scheduled tribe|\bsc\s*/\s*st\b|\btribal\b"
+        # Bare SC/ST abbreviations, but not the "Sc" of B.Sc or M.Sc.
+        r"|(?<![.a-z])\bscs?\b|(?<![.a-z])\bsts?\b",
+    ),
+    ("obc", r"\bobcs?\b|other backward|backward class"),
+    ("minority", r"\bminorit|\bmuslim|\bchristian|\bsikh\b|\bbuddhist|\bjain\b|\bparsi"),
+    (
+        "pwd",
+        r"\bpwd\b|disabilit|differently abled|divyang|specially abled"
+        r"|visually impaired|\bsaksham\b",
+    ),
+)
+
+#: Tags describing the nature of the award; safe to read from the whole blurb.
+_NATURE_TAGS: tuple[tuple[str, str], ...] = (
+    ("need", r"welfare based|need[- ]based|economically weaker|\bincome\b|\bbpl\b"),
+    ("merit", r"merit based|\bmerit\b|\btopper|top class|\brank\b"),
+    ("renewal", r"\brenewal\b"),
+    ("technical", r"\btechnical\b|engineering|polytechnic|\baicte\b|\bb\.?\s?tech\b"),
+    ("research", r"\bresearch\b|\bfellowship\b|\bph\.?\s?d\b"),
+)
+
+
+def infer_tags(title: str, detail: str | None = None) -> list[str]:
+    """Derive the dashboard's filter tags.
+
+    `title` decides the audience tags; `detail` (eligibility, description) only
+    contributes to the award-nature tags. Lumping both together tags almost
+    every scholarship with every category, which makes the filter chips useless.
+    """
+    title_text = (title or "").lower()
+    all_text = f"{title or ''} {detail or ''}".lower()
+
     tags: list[str] = []
-
-    def add(tag: str, pattern: str) -> None:
-        if re.search(pattern, t):
+    for tag, pattern in _AUDIENCE_TAGS:
+        if re.search(pattern, title_text):
             tags.append(tag)
-
-    add("girls", r"\bgirl|\bwomen\b|\bwoman\b|\bfemale\b|pragati|single girl")
-    add("sc_st", r"\bsc\b|\bst\b|scheduled caste|scheduled tribe|\bsc/st\b|tribal")
-    add("obc", r"\bobc\b|other backward|backward class")
-    add("minority", r"\bminorit|muslim|christian|sikh|buddhist|jain|parsi")
-    add("pwd", r"\bpwd\b|disabilit|differently abled|divyang|saksham|visually impaired")
-    add("need", r"welfare based|need[- ]based|economically weaker|income|bpl|poor")
-    add("merit", r"merit based|\bmerit\b|topper|top class|rank")
-    add("renewal", r"\brenewal\b")
-    add("technical", r"technical|engineering|polytechnic|aicte|\bb\.?\s?tech")
-    add("research", r"research|fellowship|\bph\.?\s?d\b")
+    for tag, pattern in _NATURE_TAGS:
+        if re.search(pattern, all_text):
+            tags.append(tag)
     return tags
