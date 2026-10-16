@@ -92,6 +92,22 @@ class TestGuessLevel:
     def test_level(self, text: str, expected: str) -> None:
         assert guess_level(text) == expected
 
+    def test_school_exam_as_a_prerequisite_does_not_mean_school_level(self) -> None:
+        # Eligibility routinely names the qualifying school exam before the
+        # course being funded; this is a graduation scholarship.
+        text = (
+            "Kotak Kanya Scholarship: passed Class 12 and secured admission to "
+            "the first year of a graduation programme"
+        )
+        assert guess_level(text) == "ug"
+
+    def test_school_is_used_when_nothing_higher_is_mentioned(self) -> None:
+        assert guess_level("Pre Matric Scholarship for Class 9 students") == "school"
+
+    def test_post_graduation_still_reads_as_pg(self) -> None:
+        assert guess_level("Scholarship for post graduation students") == "pg"
+        assert guess_level("Postgraduate scholarship") == "pg"
+
     def test_first_mention_wins(self) -> None:
         # "undergraduate" leads, so an "integrated master's" aside must not
         # flip this to pg.

@@ -107,7 +107,7 @@
       "award_amount": "Up to INR 40,000",
       "eligibility": "Open to pan-India transgender students pursuing secondary, senior secondary, or undergraduate/postgraduate studies through any government/private open school or open university. A minimum score of 35% in Class 10 and/or Class 12 is required. The applicants' parental income from all sources must not exceed INR 10,00,000 per year . Candidates who are children of employees of Ujjivan Small Finance Bank Limited or Buddy4Study are ineligible.",
       "description": null,
-      "level": "school",
+      "level": "ug",
       "tags": [
         "need"
       ]
@@ -769,7 +769,7 @@
       "award_amount": "₹8,000 per month for 10 months in a year",
       "eligibility": "To be eligible for this scholarship, an applicant must:- be an Indian citizen be a domicile of the North-Eastern Region (NER) have passed Class 12 (or equivalent) in the preceding year from a school situated within NER through a recognised Board of Education, including: Central Board of Secondary Education (CBSE) Indian Certificate of Secondary Education (ICSE) National Institute of Open Schooling (NIOS) have secured admission in the first year of a general degree/technical/professional/medical/paramedical course (Integrated courses included) in a recognised college/university/institute in India, have an annual family income below ₹4,50,000 from all sources Note:- 50% of the scholarship slots in each category are reserved for programs in Arts, Humanities, Social Sciences, Law, and Management. The remaining 50% are reserved for programs in Science, Engineering & Technology, Medical, Technical, Agriculture, and Forestry.",
       "description": null,
-      "level": "school",
+      "level": "ug",
       "tags": [
         "need",
         "technical"
@@ -787,7 +787,7 @@
       "award_amount": "Scholarship support up to INR 30,000",
       "eligibility": "Students must fulfil the following criteria to be eligible for the Buddy4Study Gati Shakti Scholarship Program 2026-27: The applicant must be a child/ward of a Heavy or Light Commercial Vehicle Driver, including truck, bus, pickup, and last-mile delivery vehicle drivers. Students studying from Class 9 onwards, including Classes 9 to 12, vocational courses, ITI, diploma, polytechnic, undergraduate, and postgraduate programs, are eligible to apply. Applicants must have secured a minimum of 60% marks in the previous class, academic year, or semester. The applicant's total annual family income from all sources must not exceed INR 8,00,000. Students from across India are eligible to apply. Applicants must provide valid proof of their parent/guardian's occupation as a Heavy or Light Commercial Vehicle Driver. Note: Students awaiting their latest academic results may be considered based on their previous academic year/semester performance, wherever applicable. Preference may be given to applicants from identified priority categories, including Persons with Disabilities (PwD), students from single-parent households, orphaned students, transgender students, and students belonging to aspira…",
       "description": null,
-      "level": "school",
+      "level": "ug",
       "tags": [
         "need",
         "technical"
@@ -884,7 +884,7 @@
       "award_amount": "INR 1.5 lakh* per year",
       "eligibility": "Open for meritorious girl students across India. Applicants must have scored at least 75% or more marks or equivalent CGPA in Class 12 board examinations. Applicant's annual family income must not exceed INR 6,00,000. Meritorious girl students who have secured admission to the first year of graduation programs in the academic year 2026-27 in institutes of repute like NIRF/NAAC accredited for professional graduation degrees, such as Engineering, MBBS, Integrated LLB (5 Years), Integrated BS-MS/BS-Research, in ISER, IISC(Bangalore), or other professional courses (Design, Architecture, etc.). Children of employees of Kotak Mahindra Group, Kotak Education Foundation and Buddy4Study are not eligible to apply for the Kotak Kanya Scholarship 2026-27.",
       "description": null,
-      "level": "school",
+      "level": "ug",
       "tags": [
         "girls",
         "need",
@@ -940,7 +940,7 @@
       "award_amount": "Scholarship of INR 10,000",
       "eligibility": "Girls studying in Class 11, Class 12, Graduation, and Post-Graduation are eligible to apply. Applicants must be daughters/wards of truck drivers . Students from across India are eligible to apply. Children of employees of Buddy4Study or Mahindra & Mahindra Limited are not eligible. Note: If the latest semester results are not available, the previous odd-semester results may be considered for selection.",
       "description": null,
-      "level": "school",
+      "level": "ug",
       "tags": []
     },
     {

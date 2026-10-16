@@ -205,7 +205,10 @@ _LEVEL_PATTERNS: tuple[tuple[str, str], ...] = (
     (
         "ug",
         r"\bunder[- ]?graduat|\bug\b|\bb\.?\s?tech\b|\bb\.?\s?sc\b|\bb\.?\s?a\b"
-        r"|\bb\.?\s?com\b|bachelor|\bdegree\b|diploma|polytechnic|\biti\b",
+        r"|\bb\.?\s?com\b|bachelor|\bdegree\b|diploma|polytechnic|\biti\b"
+        # Bare "graduation"/"graduate": in "post graduation" the pg pattern
+        # matches earlier in the string, so first-mention still picks pg.
+        r"|\bgraduation\b|\bgraduate\b",
     ),
     (
         "school",
@@ -218,18 +221,29 @@ _LEVEL_PATTERNS: tuple[tuple[str, str], ...] = (
 def guess_level(text: str) -> str:
     """Infer the study level from a title or eligibility blurb.
 
-    Whichever level is mentioned first wins. Callers pass the title ahead of the
-    eligibility text, so the programme's own wording decides, and an aside like
-    "integrated master's" later in the criteria cannot override an
-    "undergraduate" in the title.
+    Among phd/pg/ug, whichever is mentioned first wins. Callers pass the title
+    ahead of the eligibility text, so the programme's own wording decides and an
+    aside like "integrated master's" cannot override an "undergraduate" title.
+
+    "school" is only chosen when nothing higher is mentioned at all, because
+    eligibility rules routinely name a school exam as the *prerequisite* for a
+    college award ("passed Class 12 and secured admission to the first year of a
+    graduation programme"), and reading that as a school scholarship would file
+    it under the wrong filter.
     """
     t = (text or "").lower()
     best: tuple[int, str] | None = None
     for level, pattern in _LEVEL_PATTERNS:
+        if level == "school":
+            continue
         match = re.search(pattern, t)
         if match is not None and (best is None or match.start() < best[0]):
             best = (match.start(), level)
-    return best[1] if best else "any"
+    if best is not None:
+        return best[1]
+
+    school_pattern = next(p for lv, p in _LEVEL_PATTERNS if lv == "school")
+    return "school" if re.search(school_pattern, t) else "any"
 
 
 #: Tags describing who a scholarship is *for*. Inferred from the title only:
