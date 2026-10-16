@@ -116,16 +116,24 @@ def list_scholarships(
             Scholarship.deadline <= cutoff,
         )
 
-    total = db.execute(select(func.count()).select_from(stmt.subquery())).scalar_one()
+    wanted_tags = {t.strip().lower() for t in (tag or []) if t.strip()}
 
-    rows = list(db.execute(_apply_order(stmt).limit(limit).offset(offset)).scalars())
-
-    # tags is a JSON column, so filter in Python rather than with a dialect-specific
-    # JSON operator. The row count here is small (hundreds, not millions).
-    if tag:
-        wanted = {t.strip().lower() for t in tag if t.strip()}
-        rows = [r for r in rows if wanted.issubset({t.lower() for t in (r.tags or [])})]
-        total = len(rows)
+    if wanted_tags:
+        # tags is a JSON column, so match in Python rather than with a
+        # dialect-specific JSON operator. This has to happen before paging:
+        # filtering an already-limited page would drop matches that sit beyond
+        # it and report a wrong total. The catalogue is hundreds of rows, so
+        # ordering it in SQL and slicing here is cheap.
+        matched = [
+            row
+            for row in db.execute(_apply_order(stmt)).scalars()
+            if wanted_tags.issubset({t.lower() for t in (row.tags or [])})
+        ]
+        total = len(matched)
+        rows = matched[offset : offset + limit]
+    else:
+        total = db.execute(select(func.count()).select_from(stmt.subquery())).scalar_one()
+        rows = list(db.execute(_apply_order(stmt).limit(limit).offset(offset)).scalars())
 
     tracked = _tracked_for(db, user, [r.id for r in rows])
     return ScholarshipListOut(

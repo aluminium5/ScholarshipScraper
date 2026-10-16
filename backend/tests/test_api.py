@@ -221,6 +221,30 @@ class TestScholarships:
         ).json()
         assert neither["items"] == []
 
+    def test_tag_filter_is_applied_before_paging(
+        self, client: TestClient, auth, make_scholarship
+    ) -> None:
+        # Two tagged rows sit behind an untagged one in deadline order, so a
+        # filter applied to an already-limited page would miss them and report
+        # a wrong total.
+        make_scholarship(title="Untagged soonest", tags=[], deadline=date.today() + timedelta(days=1))
+        make_scholarship(title="Tagged later", tags=["girls"], deadline=date.today() + timedelta(days=2))
+        make_scholarship(title="Tagged latest", tags=["girls"], deadline=date.today() + timedelta(days=3))
+
+        body = client.get(
+            "/api/scholarships", params={"tag": "girls", "limit": 1}, headers=auth
+        ).json()
+        assert body["total"] == 2
+        assert [i["title"] for i in body["items"]] == ["Tagged later"]
+
+        page_two = client.get(
+            "/api/scholarships",
+            params={"tag": "girls", "limit": 1, "offset": 1},
+            headers=auth,
+        ).json()
+        assert page_two["total"] == 2
+        assert [i["title"] for i in page_two["items"]] == ["Tagged latest"]
+
     def test_due_within_days(self, client: TestClient, auth, make_scholarship) -> None:
         make_scholarship(title="This week", deadline=date.today() + timedelta(days=3))
         make_scholarship(title="Next month", deadline=date.today() + timedelta(days=40))
