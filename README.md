@@ -330,10 +330,17 @@ it — each parser is a pure function over HTML, so no network is needed to iter
 ## Seed data
 
 `backend/seed/scholarships.json` is the curated fallback, loaded **only when the
-scholarships table is completely empty**. It currently holds 77 real open
-scholarships: 37 from Buddy4Study, 18 from NSP, 15 from Vidyasaarathi, and 7
-hand-checked private programmes (Vidyadhan, Reliance Foundation UG and PG, JN
-Tata Endowment, Inlaks, Aditya Birla, Sitaram Jindal).
+scholarships table is completely empty**. It currently holds 75 real open
+scholarships: 37 from Buddy4Study, 18 from NSP, 15 from Vidyasaarathi, and 5
+hand-checked private programmes (Vidyadhan, JN Tata Endowment, Inlaks, Aditya
+Birla, Sitaram Jindal).
+
+Every entry's `apply_url` is checked to have a path before it is written, and
+`test_ingest.py` asserts the same over the committed file — the loader silently
+skips a bad record, so the file needs its own guard. The Reliance Foundation
+programmes were dropped for this reason: their site is a single-page app that
+answers every path with HTTP 200 and an identical title, so no per-programme URL
+could be verified and the UG and PG awards would have shared one link.
 
 Because it stores real deadlines, **it goes stale**: once every dated entry has
 passed, the fallback shows nothing. Regenerate it from the live portals:
@@ -384,7 +391,7 @@ Two behaviours worth knowing:
 ## Tests
 
 ```bash
-pytest                      # 151 tests
+pytest                      # 157 tests
 cd frontend && npm run build   # typecheck + production build
 ```
 
