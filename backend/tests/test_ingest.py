@@ -303,6 +303,52 @@ class TestSeedFallback:
         assert len(sources) >= 2
 
 
+class TestSeedFile:
+    """Guard the committed seed file itself.
+
+    The loader silently skips a record whose apply_url has no path, so asserting
+    on loaded rows alone would not notice a bad entry in the file.
+    """
+
+    @pytest.fixture(scope="class")
+    def payload(self) -> dict:
+        import json
+
+        from backend.services.ingest import SEED_PATH
+
+        return json.loads(SEED_PATH.read_text(encoding="utf-8"))
+
+    def test_is_well_formed(self, payload) -> None:
+        assert isinstance(payload["scholarships"], list)
+        assert len(payload["scholarships"]) >= 15  # spec §7.5.5
+        assert payload["_meta"]["generated_on"]
+
+    def test_every_entry_is_deep_linked(self, payload) -> None:
+        for entry in payload["scholarships"]:
+            url = entry["apply_url"]
+            assert url.startswith("https://"), entry["external_id"]
+            path = url.split("://", 1)[1].partition("/")[2]
+            assert path.strip("/"), f"{entry['external_id']} points at a bare homepage: {url}"
+
+    def test_every_entry_has_the_required_fields(self, payload) -> None:
+        for entry in payload["scholarships"]:
+            assert entry["title"].strip()
+            assert entry["external_id"].strip()
+            assert entry["source"] in {"nsp", "buddy4study", "vidyasaarathi", "manual"}
+            assert entry["level"] in {"school", "ug", "pg", "phd", "any"}
+
+    def test_dates_are_iso_or_null(self, payload) -> None:
+        for entry in payload["scholarships"]:
+            for field in ("deadline", "opens_at"):
+                value = entry.get(field)
+                if value is not None:
+                    date.fromisoformat(value)  # raises if malformed
+
+    def test_source_and_external_id_pairs_are_unique(self, payload) -> None:
+        pairs = [(e["source"], e["external_id"]) for e in payload["scholarships"]]
+        assert len(pairs) == len(set(pairs))
+
+
 class TestRefreshRun:
     def test_run_is_recorded_with_a_summary(self, db, use_scrapers, no_seed) -> None:
         use_scrapers(StubScraper("nsp", [make_record("nsp", "a")]))

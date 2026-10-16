@@ -56,48 +56,8 @@ CURATED: list[dict] = [
         "level": "school",
         "tags": ["need", "merit"],
         "deadline": None,
-        "apply_url": "https://www.vidyadhan.org/",
-        "info_url": "https://www.vidyadhan.org/",
-    },
-    {
-        "source": "manual",
-        "external_id": "manual-reliance-foundation-ug",
-        "title": "Reliance Foundation Undergraduate Scholarships",
-        "provider": "Reliance Foundation",
-        "description": (
-            "Merit-cum-means undergraduate scholarships awarded on an aptitude "
-            "test and Class 12 performance."
-        ),
-        "award_amount": "Up to INR 2,00,000 over the course",
-        "eligibility": (
-            "First-year undergraduate students in India with family income "
-            "below the stated limit."
-        ),
-        "level": "ug",
-        "tags": ["merit", "need"],
-        "deadline": None,
-        "apply_url": "https://scholarships.reliancefoundation.org/",
-        "info_url": "https://scholarships.reliancefoundation.org/",
-    },
-    {
-        "source": "manual",
-        "external_id": "manual-reliance-foundation-pg",
-        "title": "Reliance Foundation Postgraduate Scholarships",
-        "provider": "Reliance Foundation",
-        "description": (
-            "Postgraduate scholarships in computer science, artificial "
-            "intelligence, energy and life sciences."
-        ),
-        "award_amount": "Up to INR 6,00,000 over the course",
-        "eligibility": (
-            "Students entering a postgraduate programme in the eligible "
-            "disciplines at a recognised Indian institution."
-        ),
-        "level": "pg",
-        "tags": ["merit", "research"],
-        "deadline": None,
-        "apply_url": "https://scholarships.reliancefoundation.org/",
-        "info_url": "https://scholarships.reliancefoundation.org/",
+        "apply_url": "https://www.vidyadhan.org/apply",
+        "info_url": "https://www.vidyadhan.org/apply",
     },
     {
         "source": "manual",
@@ -116,8 +76,8 @@ CURATED: list[dict] = [
         "level": "pg",
         "tags": ["merit"],
         "deadline": None,
-        "apply_url": "https://www.jntataendowment.org/",
-        "info_url": "https://www.jntataendowment.org/",
+        "apply_url": "https://www.jntataendowment.org/eligibility-criteria",
+        "info_url": "https://www.jntataendowment.org/eligibility-criteria",
     },
     {
         "source": "manual",
@@ -156,8 +116,8 @@ CURATED: list[dict] = [
         "level": "pg",
         "tags": ["merit"],
         "deadline": None,
-        "apply_url": "https://www.adityabirlascholars.net/",
-        "info_url": "https://www.adityabirlascholars.net/",
+        "apply_url": "https://www.adityabirlascholars.net/the-scholarship/",
+        "info_url": "https://www.adityabirlascholars.net/the-scholarship/",
     },
     {
         "source": "manual",
@@ -261,6 +221,22 @@ def main(argv: list[str] | None = None) -> int:
             log.exception("vidyasaarathi fetch failed; seeding without it")
 
     entries += CURATED
+
+    # Enforce the deep-link rule here too (spec §6): a URL with no path would be
+    # skipped by the seed loader anyway, so never write one to the file.
+    kept: list[dict] = []
+    for entry in entries:
+        url = entry.get("apply_url") or ""
+        path = url.split("://", 1)[-1].partition("/")[2].strip("/")
+        if not path:
+            log.error(
+                "dropping %r: apply_url %r has no path, so it is a portal homepage",
+                entry.get("title"),
+                url,
+            )
+            continue
+        kept.append(entry)
+    entries = kept
 
     # Deadline first, undated last, matching how the dashboard sorts.
     entries.sort(key=lambda e: (e.get("deadline") is None, e.get("deadline") or ""))
