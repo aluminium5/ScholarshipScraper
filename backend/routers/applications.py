@@ -148,7 +148,12 @@ def patch_application(
     return _to_out(row)
 
 
-@router.delete("/{application_id}", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete(
+    "/{application_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+    # 204 carries no body, so suppress response-model generation.
+    response_model=None,
+)
 def delete_application(
     application_id: int,
     db: Session = Depends(get_db),

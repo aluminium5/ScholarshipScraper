@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Scraper fixtures must round-trip byte-for-byte so parser tests are deterministic
+backend/tests/fixtures/*.html -text
