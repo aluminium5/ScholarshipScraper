@@ -1,0 +1,1099 @@
+{
+  "_meta": {
+    "generated_on": "2026-10-17",
+    "generated_by": "python -m backend.seed.generate_seed",
+    "note": "Curated fallback loaded only when the scholarships table is empty. Real deadlines go stale: regenerate this file when the dated entries have passed. Entries with a null deadline were verified to exist but had no deadline confirmable from an official page, so none was invented.",
+    "counts": {
+      "buddy4study": 37,
+      "nsp": 18,
+      "manual": 7
+    }
+  },
+  "scholarships": [
+    {
+      "source": "buddy4study",
+      "external_id": "indic-ai-scholarship-program-2026-27",
+      "title": "Indic AI Scholarship Program CAT 2026",
+      "apply_url": "https://www.buddy4study.com/page/indic-ai-scholarship-program",
+      "provider": null,
+      "deadline": "2026-10-18",
+      "opens_at": "2026-10-05",
+      "info_url": "https://www.buddy4study.com/page/indic-ai-scholarship-program",
+      "award_amount": "Selected students will receive a 100% scholarship for CAT preparation.",
+      "eligibility": "Open to PAN-India students who are currently pursuing an undergraduate (UG) degree , particularly those in their third or final year. Students who are planning to pursue an MBA and wish to prepare for the CAT examination. Students with disabilities holding a valid UDID (Unique Disability ID) card . Note: Accessible learning materials are provided to visually impaired students across programmes. Program Details Course: CAT Exam preparation Duration: 8 Weeks Mode: Live online classes with structured preparation Examinations Covered: CAT examination Batch Flexibility: Students joining at different stages may be accommodated based on the availability of the relevant batches. Course Fee: INR 47,000 Preparation Partner: IMS Learning",
+      "description": null,
+      "level": "ug",
+      "tags": []
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "alivus-life-sciences-scholarship-program-for-class-11-12-science",
+      "title": "Alivus Life Sciences VIGYASA Scholarship Program 2025-26 For class 11 & 12 (Science)",
+      "apply_url": "https://www.buddy4study.com/page/alivus-life-sciences-VIGYASA-scholarship-program",
+      "provider": null,
+      "deadline": "2026-10-25",
+      "opens_at": "2026-02-09",
+      "info_url": "https://www.buddy4study.com/page/alivus-life-sciences-VIGYASA-scholarship-program",
+      "award_amount": "Fixed Scholarship of up to INR 72,000",
+      "eligibility": "Open to students from partnered schools under the Vigyasa Project . Students must be currently studying in Class 11 or Class 12 (Science) . Annual parental income should not exceed INR 8 lakh from all sources . Applicants must have secured at least 60% marks in their previous academic year. Children of employees of Buddy4Study or Alivus Life Sciences are not eligible to apply. Note: Preference to be given to girls, Persons with Disabilities (PwD), single-parent children, orphans. Students already receiving full financial assistance under other scholarships or government schemes are not eligible.",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "vidyadhan-mathura-scholarship-for-women-in-stem-2026",
+      "title": "Vidyadhan Mathura Scholarship for Women in STEM 2026",
+      "apply_url": "https://www.buddy4study.com/page/vidyadhan-mathura-scholarship-for-women-in-stem",
+      "provider": null,
+      "deadline": "2026-10-25",
+      "opens_at": "2026-10-02",
+      "info_url": "https://www.buddy4study.com/page/vidyadhan-mathura-scholarship-for-women-in-stem",
+      "award_amount": "Scholarships of up to INR 75,000 per year",
+      "eligibility": "Open to female students who are residents of Mathura District, UP, pursuing STEM courses such as MBBS, Engineering, B.Sc., or other STEM programmes in Mathura District or outside the district across India. The scholarship is also open to female students who may not be domiciled in the Mathura district but are currently pursuing a STEM course at an institution located in the Mathura district. Applicant must have secured at least 70% marks in Class 12 (60% for students with disabilities). Must have secured admission to the first year of a degree/professional programme for the Academic Year 2026–27 . Must have either completed Class 12 from a school located in Mathura District or be currently studying at an institution located in Mathura District. Annual family income must be less than INR 3 lakh .",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "girls",
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "raman-kant-munjal-scholarship-2026-27",
+      "title": "Raman Kant Munjal Scholarships 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/raman-kant-munjal-scholarships",
+      "provider": null,
+      "deadline": "2026-10-30",
+      "opens_at": "2026-07-08",
+      "info_url": "https://www.buddy4study.com/page/raman-kant-munjal-scholarships",
+      "award_amount": "INR 40,000 to INR 5,50,000",
+      "eligibility": "Open to students across India currently enrolled in the first year of BBA, BFIA, B.Com (H, E), Bachelor of Management Studies (BMS), Integrated Program in Management (IPM), B.A. (Economics), Bachelor in Business Studies (BBS), or any other finance-related degree course. Applicants must have secured at least 80% marks in Classes 10 and 12 (For PwD students, the minimum percentage required is 70% marks). The annual parental income of the applicant must not exceed INR 6 lakh from all sources. Open for Indian nationals only. The children of employees/contract employees of Hero FinCorp, Raman Kant Munjal Foundation, and Buddy4Study are ineligible to apply. Note: Preference shall be given to: Children of farmers, domestic workers, and economically disadvantaged families. Applicants belonging to Tier 3 and Tier 4 cities.",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "muskaan-scholarship-program-for-classes-9-to-12-students",
+      "title": "Muskaan Scholarship Program 2.0 (2026-27)",
+      "apply_url": "https://www.buddy4study.com/page/muskaan-scholarship-program",
+      "provider": null,
+      "deadline": "2026-10-30",
+      "opens_at": "2026-05-19",
+      "info_url": "https://www.buddy4study.com/page/muskaan-scholarship-program",
+      "award_amount": "Up to INR 12,000 and mentorship support",
+      "eligibility": "Students studying in Classes 9 to 12 from the following states of India are eligible to apply: Andhra Pradesh, Arunachal Pradesh, Assam, Bihar, Chhattisgarh, Jharkhand, Karnataka, Kerala, Manipur, Meghalaya, Mizoram, Nagaland, Odisha, Tripura, Puducherry, Sikkim, Tamil Nadu, Telangana and West Bengal. Open to children of commercial drivers , including LMV/HMV drivers , children of mechanics, and students belonging to the Economically Weaker Sections (EWS) category . Applicants must have secured 60% and above in their previous class. The total annual family income from all sources must not exceed INR 8 lakh . Children of employees of Valvoline Cummins Private Ltd. (VCPL) and Buddy4Study are not eligible.",
+      "description": null,
+      "level": "any",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "ujjivan-scholarship-2026-27",
+      "title": "Ujjivan Small Finance Bank Transgender Scholarship 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/ujjivan-small-finance-bank-transgender-scholarship",
+      "provider": null,
+      "deadline": "2026-10-30",
+      "opens_at": "2026-03-18",
+      "info_url": "https://www.buddy4study.com/page/ujjivan-small-finance-bank-transgender-scholarship",
+      "award_amount": "Up to INR 40,000",
+      "eligibility": "Open to pan-India transgender students pursuing secondary, senior secondary, or undergraduate/postgraduate studies through any government/private open school or open university. A minimum score of 35% in Class 10 and/or Class 12 is required. The applicants' parental income from all sources must not exceed INR 10,00,000 per year . Candidates who are children of employees of Ujjivan Small Finance Bank Limited or Buddy4Study are ineligible.",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "concentrix-scholarship-program-2026-27",
+      "title": "Concentrix Scholarship Program 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/concentrix-scholarship-program",
+      "provider": null,
+      "deadline": "2026-10-30",
+      "opens_at": "2026-09-28",
+      "info_url": "https://www.buddy4study.com/page/concentrix-scholarship-program",
+      "award_amount": "INR 65,000 per year for the duration of the course",
+      "eligibility": "Open to Pan-India female students currently enrolled in the first year of the MBBS program at a government medical college . Applicants must have successfully completed their Grade 12 board examination. The annual parental income of the applicant must not exceed INR 5 lakh from all sources. Children of employees of Buddy4Study or Concentrix Pvt Ltd are not eligible to apply for this scholarship. Note: Preference will be given to the following applicants: Single-parent or orphan children Children from Aspirational Districts Students with disabilities Scholarship eligibility criteria can be updated at the discretion of the scholarship provider.",
+      "description": null,
+      "level": "any",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "aditya-birla-capital-scholarship-for-undergraduate-students-2026-27",
+      "title": "Aditya Birla Capital Scholarship 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/aditya-birla-capital-scholarship",
+      "provider": null,
+      "deadline": "2026-10-30",
+      "opens_at": "2026-08-22",
+      "info_url": "https://www.buddy4study.com/page/aditya-birla-capital-scholarship",
+      "award_amount": "Scholarship of up to INR 60,000",
+      "eligibility": "Open exclusively to meritorious girl students currently enrolled in Classes 9 to 12, Polytechnic Diploma, undergraduate, or postgraduate courses at recognised government schools/colleges/institutions across India. Applicants must have achieved a minimum of 60% marks in their most recent academic year. The applicant's annual family income must not exceed INR 6 lakh . Children of employees of Aditya Birla Capital, its subsidiary/JV businesses, and Buddy4Study are not eligible to apply.",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "5c9dc8f0c38c8985",
+      "title": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Degree)",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "All India Council For Technical Education",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "ug",
+      "tags": [
+        "girls",
+        "merit",
+        "technical"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "384e8cc4c8994d2d",
+      "title": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Diploma)",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "All India Council For Technical Education",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2013_G.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "ug",
+      "tags": [
+        "pwd",
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "6338a0f1e9a55022",
+      "title": "Central Sector Scholarship Of Top Class Education For SC Students",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Department of Social Justice & Empowerment",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "any",
+      "tags": [
+        "sc_st",
+        "merit"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "b350e03ab40b006d",
+      "title": "PM YASASVI Central Sector Scheme Of Top Class Education In Schools For OBC, EBC And DNT Students",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Department of Social Justice & Empowerment(Backward Classes)",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/3061_G.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "any",
+      "tags": [
+        "obc",
+        "merit",
+        "renewal"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "b0a39ae53007f9c2",
+      "title": "Prime Minister'S Scholarship Scheme For Wards Of States/UTs Police Personnel Martyred During Terror/Naxal Attacks",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Ministry of Home Affairs",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/warb/PMSS_Guidelines_1197_3001-2023-24.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "any",
+      "tags": [
+        "merit"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "7eab7a7e16cb4da5",
+      "title": "AICTE - Swanath Scholarship Scheme ( Technical Degree)",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "All India Council For Technical Education",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3039_G.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "ug",
+      "tags": [
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "a21648c9667ab1b5",
+      "title": "National Renewable Energy Fellowship Scheme",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Ministry of New And Renewable Energy",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": null,
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "any",
+      "tags": [
+        "merit",
+        "research"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "f5082c8a713165e0",
+      "title": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Post Matric",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Ministry of Labour & Employment",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/Labour_Ministry_Guidelines_of_scholarhsips schemes.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "school",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "d4cd7c52de4bbba5",
+      "title": "National Scholarship For Post Graduate Studies",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "UGC",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-09-16",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/Guidelines_NATIONAL_SCHOLARSHIP_FOR_POSTGRADUATE_STUDIES_UGC_2324.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "pg",
+      "tags": [
+        "merit"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "b41c28ef10699d82",
+      "title": "Icar Junior Research Fellowships(Jrf) And Senior Research Fellowships(Srf)",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Department of Agriculture Research and Education",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/RevisedGuidelinesforICAR_JRF_SRFandPG_Scholarship_3105_3106.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "phd",
+      "tags": [
+        "merit",
+        "research"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "d168c44d8bc5a658",
+      "title": "Prime Minister'S Scholarship Scheme For Central Armed Police Forces And Assam Rifles",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Ministry of Home Affairs",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/warb/PMSS_Guidelines_1197_3001-2023-24.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "any",
+      "tags": [
+        "merit"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "f90125986ab51017",
+      "title": "PM USP Special Scholarship Scheme For Jammu Kashmir And Ladakh",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "All India Council For Technical Education",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/PM_USPY(SSSJKL)SchemeSpecifications.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "any",
+      "tags": [
+        "merit",
+        "renewal"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "bfaed14cbc1b1bf6",
+      "title": "AICTE - Pragati Scholarship Scheme For Girl Students ( Technical Diploma)",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "All India Council For Technical Education",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "ug",
+      "tags": [
+        "girls",
+        "merit",
+        "technical"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "138c162727959ba8",
+      "title": "AICTE - Saksham Scholarship Scheme For Specially Abled Student ( Technical Degree)",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "All India Council For Technical Education",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "ug",
+      "tags": [
+        "pwd",
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "9a72eed14afe589d",
+      "title": "AICTE - Swanath Scholarship Scheme (Technical Diploma)",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "All India Council For Technical Education",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "ug",
+      "tags": [
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "2e4b5fe1406a74e8",
+      "title": "Ishan Uday Special Scholarship Scheme For NER",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "UGC",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-09-16",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/Guidelines_ISHAN UDAY_2324.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "any",
+      "tags": [
+        "merit"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "41deb7a68c5b395a",
+      "title": "Financial Assistance For Education To The Wards Of Beedi/Cine/Iomc/Lsdm- Pre Matric",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Ministry of Labour & Employment",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/Labour_Ministry_Guidelines_of_scholarhsips schemes.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "school",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "nsp",
+      "external_id": "5359ec2474880cbc",
+      "title": "PM YASASVI Central Sector Scheme Of Top Class Education In College For OBC, EBC And DNT Students",
+      "apply_url": "https://scholarships.gov.in/ApplicationForm/",
+      "provider": "Department of Social Justice & Empowerment(Backward Classes)",
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-01",
+      "info_url": "https://scholarships.gov.in/public/schemeGuidelines/ApprovedmodifieddraftofTopClassCollege.pdf",
+      "award_amount": null,
+      "eligibility": null,
+      "description": "Central government scholarship listed on the National Scholarship Portal. Apply through NSP after One Time Registration (OTR), then select this scheme.",
+      "level": "any",
+      "tags": [
+        "obc",
+        "merit"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nurtr-nurturing-minds-with-chess-program-50-fee-waiver-2025-26",
+      "title": "nurtr Nurturing Minds with Chess Program (50% Fee Waiver)",
+      "apply_url": "https://www.buddy4study.com/page/nurtr-nurturing-minds-with-chess-program",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2025-06-13",
+      "info_url": "https://www.buddy4study.com/page/nurtr-nurturing-minds-with-chess-program",
+      "award_amount": "50% fee waiver",
+      "eligibility": "To be eligible for nurtr Nurturing Minds with Chess Program 2025-26 (50% Fee Waiver) , an individual must: Be a resident of India. Be a school or college student. Fall within the age range of 5 to 25 years. Have an annual family income ranging from ₹8 lakh to ₹15 lakh.",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nurtr-nurturing-minds-with-chess-program-90-fee-waiver-2025-26",
+      "title": "nurtr Nurturing Minds with Chess Program (90% Fee Waiver)",
+      "apply_url": "https://www.buddy4study.com/page/nurtr-nurturing-minds-with-chess-program",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2025-06-13",
+      "info_url": "https://www.buddy4study.com/page/nurtr-nurturing-minds-with-chess-program",
+      "award_amount": "90% fee waiver",
+      "eligibility": "To be eligible for nurtr Nurturing Minds with Chess Program 2025-26 (90% Fee Waiver) , an individual must: Be a resident of India. Be a school or college student. Fall within the age range of 5 to 25 years. Have an annual family income of less than ₹8 lakh.",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nurtr-nurturing-minds-with-chess-program-actual-cost",
+      "title": "nurtr Nurturing Minds with Chess Program (Actual Cost)",
+      "apply_url": "https://www.buddy4study.com/page/nurtr-nurturing-minds-with-chess-program",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2025-06-13",
+      "info_url": "https://www.buddy4study.com/page/nurtr-nurturing-minds-with-chess-program",
+      "award_amount": "nurtr Neo Course at ₹9,999",
+      "eligibility": "To be eligible for nurtr Nurturing Minds with Chess Program 2025-26 , an individual must: Be a resident of India. Be a school or college student. Fall within the age range of 5 to 25 years. Have an annual family income of more than ₹15 lakh.",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "b4sif",
+      "title": "Buddy4Study India Foundation Scholarship for Class 11 & 12 students",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-05-20",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "award_amount": "Scholarships in the range of INR 6,000 to INR 24,000",
+      "eligibility": "Open to Indian students studying in Class 11 or 12, and Class 12th pass students (including those who completed Class 12 in the 2025–26 academic session). Applicants must have secured a minimum of 60% marks or equivalent in the last class attended. Annual parental/family income must be INR 8 lakh or below. Preference will be given to: High merit students Single-parent child/orphans Girl Students PwD students Government school students Students from the North-East region and aspirational districts Crisis-Based - Student in urgent need based on personal crisis | difficult situation | family crisis | without adverse impact on their education",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need",
+        "merit"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "b4sif-1",
+      "title": "Buddy4Study India Foundation Scholarship for Engineering Courses",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-05-21",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "award_amount": "Scholarship in the range of INR 35,000 to INR 75,000",
+      "eligibility": "Open to Indian students pursuing B.Tech or B.E. programs during the academic session 2026-27. Students must be enrolled in a recognised institution. Applicants must be enrolled in the first or second year of their undergraduate program. Applicants must have secured a minimum of 60% marks or equivalent in Class 12. For second-year students, an aggregate of a minimum 60% in their previous year. Annual parental/family income must be INR 8 lakh or below. Preference will be given to: Candidates with top All India Rank (AIR) Single-parent child/orphans Girl Students PwD students Government school students Students from the North-East region and aspirational districts Crisis-Based - Student in urgent need based on personal crisis | difficult situation | family crisis | without adverse impact on their education",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "merit",
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "b4sif-2",
+      "title": "Buddy4Study India Foundation Scholarship For Medical Courses and Allied Health Sciences",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-07-21",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "award_amount": "Scholarship in the range of INR 20,000 to INR 1,00,000",
+      "eligibility": "Open to Indian students pursuing MBBS, BDS, B.Pharm, B.Sc., or any other medical programs during the academic session 2026-27. Applicants must be enrolled in the first or second year of their undergraduate program. Applicants must have secured a minimum of 60% marks or equivalent in Class 12. For second-year students, an aggregate of a minimum 60% in their previous year. Annual parental/family income must be INR 8 lakh or below. Preference will be given to: Candidates with top All India Rank (AIR) Single-parent child/orphans Girl Students PwD students Government school students Students from the North-East region and aspirational districts Crisis-Based - Student in urgent need based on personal crisis | difficult situation | family crisis | without adverse impact on their education",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "merit"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "b4sif-3",
+      "title": "Buddy4Study India Foundation Scholarship for Full-time Post-Graduation Management Courses",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-07-21",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "award_amount": "Scholarship in the range of INR 50,000 to INR 1,00,000",
+      "eligibility": "Open to Indian students pursuing postgraduate management courses. Applicants must be enrolled in a 2-year full-time MBA program at a reputed B-school. Applicants must have secured a minimum of 60% marks or equivalent in the previous class. Annual parental/family income must be INR 8 lakh or below. Preference will be given to: Candidates with top All India Rank (AIR) Single-parent child/orphans Girl Students PwD students Government school students Students from the North-East region and aspirational districts Crisis-Based - Student in urgent need based on personal crisis | difficult situation | family crisis | without adverse impact on their education",
+      "description": null,
+      "level": "pg",
+      "tags": [
+        "need",
+        "merit"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "b4sif-4",
+      "title": "Buddy4Study India Foundation Scholarship for Integrated Law Courses",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-07-21",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "award_amount": "Scholarship in the range of INR 50,000 to INR 2,00,000",
+      "eligibility": "Open to Indian students pursuing a 5-year integrated law course at a recognised institute in India, or those who have applied for CLAT, LSAT-India, AILET, or any other law entrance examination. Applicants must be enrolled in the first or second year of their integrated law course. Applicants must have secured a minimum of 60% marks or equivalent in Class 12. For second-year students, an aggregate of a minimum 60% in their previous year. Annual parental/family income must be INR 8 lakh or below. Preference will be given to: Candidates with top All India Rank (AIR) Single-parent child/orphans Girl Students PwD students Government school students Students from the North-East region and aspirational districts Crisis-Based - Student in urgent need based on personal crisis | difficult situation | family crisis | without adverse impact on their education",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need",
+        "merit"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "b4sif-5",
+      "title": "Buddy4Study India Foundation Scholarship for Design and Architecture",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-07-21",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "award_amount": "Scholarship in the range of INR 30,000 to INR 60,000",
+      "eligibility": "Open to Indian students pursuing undergraduate courses in B.Des, B.F.A., B.Arch, B.Planning, or related disciplines during the academic session 2026-27. Applicants must be enrolled in the first or second year of their Design/Architecture programme. Applicants must have secured a minimum of 60% marks or equivalent in Class 12. For second-year students, an aggregate of a minimum 60% in their previous year. Annual parental/family income must be INR 8 lakh or below. Preference will be given to: Candidates with top All India Rank (AIR) Single-parent child/orphans Girl Students PwD students Government school students Students from the North-East region and aspirational districts Crisis-Based - Student in urgent need based on personal crisis | difficult situation | family crisis | without adverse impact on their education",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "merit"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "buddy4study-india-foundation-scholarship-for-general-graduation",
+      "title": "Buddy4Study India Foundation Scholarship for General Graduation",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-05-28",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-india-foundation-scholarship",
+      "award_amount": "Scholarships in the range of INR 6,000 - INR 24,000",
+      "eligibility": "Open to Indian students currently enrolled in the first year of a regular full-time general graduation degree in any stream. Applicants must have secured a minimum of 60% marks or equivalent in Class 12. Annual parental/family income must be INR 8 lakh or below. Preference will be given to: Candidates with top All India Rank (AIR) Single-parent child/orphans Girl Students PwD students Government school students Students from the North-East region and aspirational districts Crisis-Based - Student in urgent need based on personal crisis | difficult situation | family crisis | without adverse impact on their education",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "merit"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "eastman-powerup-scholarship-program",
+      "title": "Eastman Powerup Eduskill Scholarship Program 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/eastman-powerup-eduskill-scholarship-program",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-04-21",
+      "info_url": "https://www.buddy4study.com/page/eastman-powerup-eduskill-scholarship-program",
+      "award_amount": "Scholarship covers course fees for certified programs",
+      "eligibility": "For B.Tech / M.Tech / Diploma Courses Applicants must be enrolled in a full-time B.Tech (Lateral Entry, 3rd/4th year, or graduating batch of 2026), M.Tech (2nd year or graduating batch of 2026), or Polytechnic Diploma (3rd year) program at a recognised institution in India. For students pursuing electrical, electronics, or mechanical disciplines . Applicants must have secured at least 60% marks or a CGPA of 6.0 and maintained consistent academic performance from Class 10/12 onwards . Applicants must be willing to enrol in and complete approved online certification courses within the prescribed program timelines. ( Click Here for the eligible course list) Must not have any active backlogs or disciplinary issues at the time of application. Annual parental income from all sources must not exceed INR 6 lakh . Children of employees of Buddy4Study or Eastman Auto and Power Limited are not eligible to apply. Note: Priority will be given to: Girls, Persons with Disabilities (PwD), students from single-parent-led households, and orphaned students. Special consideration will be given to students residing in Tier-2 and Tier-3 cities.",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "satya-scholarship-program-for-medical-courses-2026",
+      "title": "Satya Scholarship Program for Medical Courses 2026",
+      "apply_url": "https://www.buddy4study.com/page/satya-scholarship-program",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-09-16",
+      "info_url": "https://www.buddy4study.com/page/satya-scholarship-program",
+      "award_amount": "Scholarship covers 100% tuition fee",
+      "eligibility": "Open to first-year students in 3 to 5 year undergraduate or integrated master's courses in: Medical and Health Sciences: MBBS, BDS, BPT, B.Sc. (Nursing), B.Sc. (Allied and Healthcare) Must have passed Class 12 Board Exam from a recognised board in Punjab with at least 60% aggregate . Students from Punjab who have secured admission to any of the above courses at the 12 selected institutes in the Ludhiana district are eligible for the scholarship. Additionally, students from the Ludhiana district who have secured admission to any of the above courses at one of the select Top NIRF-Ranked Medical institutions across India are eligible for the scholarship. Annual parental income must not exceed INR 8 lakh ; guardian income limits apply for orphans. Applicants must be Indian citizens and not recipients of any other educational scholarship. Note: Preference for girl students, sportspersons, persons with disabilities (PwD), orphans, and children of single parents. Satya Scholars must maintain 75% attendance, good conduct, and a minimum GPA of 6 (or 60% marks) for scholarship renewal.",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "renewal"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nsp-retention-scholarship-for-sc-girl-students-puducherry-2026",
+      "title": "NSP Retention Scholarship for SC Girl Students, Puducherry 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/puducherry-scholarships",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-08-15",
+      "info_url": "https://www.buddy4study.com/page/puducherry-scholarships",
+      "award_amount": "₹1,000 per annnum",
+      "eligibility": "To be eligible, an applicant must:- be a domicile of Puducherry for not less than 5 years be a female student belong to the Scheduled Caste (SC) category be studying in Classes 1 to 5 at a recognised institution of the state have an annual family income of not more than ₹24,000",
+      "description": null,
+      "level": "any",
+      "tags": [
+        "girls",
+        "sc_st",
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nsp-adhoc-merit-grant-for-sc-students-puducherry-2026",
+      "title": "NSP Adhoc Merit Grant for SC Students, Puducherry 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/puducherry-scholarships",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-08-15",
+      "info_url": "https://www.buddy4study.com/page/puducherry-scholarships",
+      "award_amount": "A lump-sum amount of ₹1,000",
+      "eligibility": "To be eligible, an applicant must:- be a domicile of Puducherry belong to the Scheduled Caste (SC) category have secured 65% or above in the Class 10 examination be pursuing higher studies at a recognised university/college/institution",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "sc_st",
+        "merit"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nsp-opportunity-cost-to-parents-of-sc-girl-students-puducherry-2026",
+      "title": "NSP Opportunity Cost to Parents of SC Girl Students, Puducherry 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/puducherry-scholarships",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-08-15",
+      "info_url": "https://www.buddy4study.com/page/puducherry-scholarships",
+      "award_amount": "₹3,000 per academic year",
+      "eligibility": "To be eligible, an applicant must:- be a domicile of Puducherry be a female student belong to the Scheduled Caste (SC) category be studying in Class 6 and 10 at a recognised institution of the state have a family income not exceeding ₹9,000 annually",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "girls",
+        "sc_st",
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nsp-national-scholarship-for-post-graduate-studies-2026",
+      "title": "NSP National Scholarship for Post Graduate Studies 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/nsp-university-grants-commission-ugc-scholarships",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-09-16",
+      "info_url": "https://www.buddy4study.com/page/nsp-university-grants-commission-ugc-scholarships",
+      "award_amount": "₹15,000 per month for 10 months in a year",
+      "eligibility": "To be eligible, an applicant must:- be an Indian national be enrolled in the first year of a postgraduate degree program at a recognised university/college/institution in India be below 30 years of age as of the admission date have an annual family income of less than ₹2,50,000 from all sources Note:- Students who have already acquired a postgraduate degree are not eligible to apply for this scholarship. Additionally, students admitted to a postgraduate program through open/distance learning, correspondence, private, or part-time modes are also ineligible.",
+      "description": null,
+      "level": "pg",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nsp-ishan-uday-special-scholarship-scheme-for-ner-2026",
+      "title": "NSP Ishan Uday Special Scholarship Scheme for NER 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/nsp-university-grants-commission-ugc-scholarships",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-09-16",
+      "info_url": "https://www.buddy4study.com/page/nsp-university-grants-commission-ugc-scholarships",
+      "award_amount": "₹8,000 per month for 10 months in a year",
+      "eligibility": "To be eligible for this scholarship, an applicant must:- be an Indian citizen be a domicile of the North-Eastern Region (NER) have passed Class 12 (or equivalent) in the preceding year from a school situated within NER through a recognised Board of Education, including: Central Board of Secondary Education (CBSE) Indian Certificate of Secondary Education (ICSE) National Institute of Open Schooling (NIOS) have secured admission in the first year of a general degree/technical/professional/medical/paramedical course (Integrated courses included) in a recognised college/university/institute in India, have an annual family income below ₹4,50,000 from all sources Note:- 50% of the scholarship slots in each category are reserved for programs in Arts, Humanities, Social Sciences, Law, and Management. The remaining 50% are reserved for programs in Science, Engineering & Technology, Medical, Technical, Agriculture, and Forestry.",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "buddy4study-gati-shakti-scholarship-program-2026-27",
+      "title": "Buddy4Study Gati Shakti Scholarship Program 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-gati-shakti-scholarship-program",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-08-24",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-gati-shakti-scholarship-program",
+      "award_amount": "Scholarship support up to INR 30,000",
+      "eligibility": "Students must fulfil the following criteria to be eligible for the Buddy4Study Gati Shakti Scholarship Program 2026-27: The applicant must be a child/ward of a Heavy or Light Commercial Vehicle Driver, including truck, bus, pickup, and last-mile delivery vehicle drivers. Students studying from Class 9 onwards, including Classes 9 to 12, vocational courses, ITI, diploma, polytechnic, undergraduate, and postgraduate programs, are eligible to apply. Applicants must have secured a minimum of 60% marks in the previous class, academic year, or semester. The applicant's total annual family income from all sources must not exceed INR 8,00,000. Students from across India are eligible to apply. Applicants must provide valid proof of their parent/guardian's occupation as a Heavy or Light Commercial Vehicle Driver. Note: Students awaiting their latest academic results may be considered based on their previous academic year/semester performance, wherever applicable. Preference may be given to applicants from identified priority categories, including Persons with Disabilities (PwD), students from single-parent households, orphaned students, transgender students, and students belonging to aspira…",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "need",
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "buddy4study-management-studies-funding-solutions",
+      "title": "Buddy4Study Education Funding Program For Management Studies",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-education-funding-program-for-management",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-07-07",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-education-funding-program-for-management",
+      "award_amount": "Funding Solution via a mix of funding opportunities",
+      "eligibility": "This initiative is open to students who are currently pursuing or seeking admission to any MBA, PGDM or a Specialised Management Programme at a recognised institution in India. Students preparing for or who have appeared in national-level management entrance examinations such as CAT, CMAT, MAT, or XAT, or institute/college-specific entrance examinations, are eligible. This also includes students awaiting their entrance examination results or admission confirmation. Note: Please provide all information accurately and to the best of your knowledge. The quality and relevance of the funding opportunities matched to your profile will depend on the details submitted by you.",
+      "description": null,
+      "level": "pg",
+      "tags": []
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "buddy4study-education-funding-program-for-design",
+      "title": "Buddy4Study Education Funding Program for Design",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-education-funding-program-for-design-1",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-24",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-education-funding-program-for-design-1",
+      "award_amount": "Funding Solution via a mix of funding opportunities",
+      "eligibility": "This initiative is open to students who are currently pursuing or seeking admission to an undergraduate or postgraduate Design programme at a recognised institution in India. Students enrolled in B.Des or M.Des, preparing for design entrance exams, or who have already appeared in such exams, are eligible. This includes students who have appeared in Class 12 or have already passed Class 12. Applicable design disciplines include: Product Design, Communication Design, Fashion Design, Textile Design, Interior Design, Graphic Design, Interaction Design, Animation, and Jewellery Design, etc. Note: Please provide all information accurately and to the best of your knowledge. The quality and relevance of the funding opportunities matched to your profile will depend on the details submitted by you.",
+      "description": null,
+      "level": "ug",
+      "tags": []
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "buddy4study-education-funding-program-for-engineering",
+      "title": "Buddy4Study Education Funding Program For Engineering",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-education-funding-program-for-engineering-1",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-06-24",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-education-funding-program-for-engineering-1",
+      "award_amount": "Funding Solution via a mix of funding opportunities",
+      "eligibility": "This initiative is open to students who are currently pursuing or seeking admission to a B.Tech or BE programme at a recognised institution in India. Students enrolled in BE/Btech, preparing for engineering entrance exams or appeared in any entrance exam for engineering admission (Appeared in Class 12 or already passed Class 12 ) Note: Please provide all information accurately and to the best of your knowledge. The quality and relevance of the funding opportunities matched to your profile will depend on the details submitted by you.",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "efpmh",
+      "title": "Buddy4Study Education Funding Program For Medical and Allied Health Sciences",
+      "apply_url": "https://www.buddy4study.com/page/buddy4study-education-funding-program-for-medical-and-allied-health-sciences",
+      "provider": null,
+      "deadline": "2026-10-31",
+      "opens_at": "2026-07-10",
+      "info_url": "https://www.buddy4study.com/page/buddy4study-education-funding-program-for-medical-and-allied-health-sciences",
+      "award_amount": "Funding Solution via a mix of funding opportunities",
+      "eligibility": "This initiative is open to students who are currently pursuing or seeking admission to any recognised Medical or Allied Health Sciences programme at an institution in India. Medical programmes may include MBBS, BDS, BAMS, BHMS, BUMS, BSMS, DNB, DrNB, or other recognised medical and clinical programmes, as applicable. Students who have appeared in centralised medical entrance examinations such as NEET-UG, NEET-PG, NEET-MDS, NEET-SS, INI-CET, or FMGE are eligible, wherever applicable to their academic pathway. Allied Health Sciences programmes may include B.Sc Nursing, GNM, ANM, BPT, BOT, B.Pharm, Pharm.D, B.Sc Medical Laboratory Technology, Medical Imaging/Radiology Technology, Optometry, and other recognised healthcare and paramedical programmes. Students who have appeared in allied health sciences entrance examinations such as CUET-UG/CUET-PG for participating universities, AIIMS B.Sc Nursing, AIIMS B.Sc Paramedical, JENPAS-UG, MHT-CET PCB/Pharmacy, KEAM, state nursing / paramedical / pharmacy CETs, or university / institute-specific entrance examinations are also eligible. Note: Please provide all information accurately and to the best of your knowledge. The quality and relevanc…",
+      "description": null,
+      "level": "ug",
+      "tags": []
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "colgate-keep-india-smiling-scholarship",
+      "title": "Colgate Keep India Smiling Scholarship for BDS Students 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/colgate-keep-india-smiling-scholarship-program",
+      "provider": null,
+      "deadline": "2026-11-01",
+      "opens_at": "2026-09-01",
+      "info_url": "https://www.buddy4study.com/page/colgate-keep-india-smiling-scholarship-program",
+      "award_amount": "INR 75,000",
+      "eligibility": "Open for students currently enrolled in any year of the BDS (Bachelor of Dental Surgery) course. Applicants must have cleared the Class 12 board examination with a minimum score of 65%. 2nd, 3rd, and 4th-year BDS students must have secured at least 60% in their last semester to apply. Students must be enrolled in a recognised government or private college or institute. Applicants’ annual family income should be less than INR 8 lakh. Open to Indian nationals only. Children of employees of Buddy4Study and Colgate India are not eligible. Note: Preference will be given to applicants from Maharashtra, Goa, Gujarat, Himachal Pradesh, and Andhra Pradesh.",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "kotak-kanya-scholarship-2026-27",
+      "title": "Kotak Kanya Scholarship 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/kotak-kanya-scholarship",
+      "provider": null,
+      "deadline": "2026-11-15",
+      "opens_at": "2026-07-14",
+      "info_url": "https://www.buddy4study.com/page/kotak-kanya-scholarship",
+      "award_amount": "INR 1.5 lakh* per year",
+      "eligibility": "Open for meritorious girl students across India. Applicants must have scored at least 75% or more marks or equivalent CGPA in Class 12 board examinations. Applicant's annual family income must not exceed INR 6,00,000. Meritorious girl students who have secured admission to the first year of graduation programs in the academic year 2026-27 in institutes of repute like NIRF/NAAC accredited for professional graduation degrees, such as Engineering, MBBS, Integrated LLB (5 Years), Integrated BS-MS/BS-Research, in ISER, IISC(Bangalore), or other professional courses (Design, Architecture, etc.). Children of employees of Kotak Mahindra Group, Kotak Education Foundation and Buddy4Study are not eligible to apply for the Kotak Kanya Scholarship 2026-27.",
+      "description": null,
+      "level": "school",
+      "tags": [
+        "girls",
+        "need",
+        "technical",
+        "research"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nsp-technical-education-scholarship-scheme-for-diploma-students-himachal-pradesh-2026",
+      "title": "NSP Technical Education Scholarship Scheme for Diploma Students, Himachal Pradesh 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/himachal-pradesh-technical-education-scholarship-schemes",
+      "provider": null,
+      "deadline": "2026-11-15",
+      "opens_at": "2026-09-08",
+      "info_url": "https://www.buddy4study.com/page/himachal-pradesh-technical-education-scholarship-schemes",
+      "award_amount": "Up to ₹400 per month",
+      "eligibility": "To be eligible, an applicant must:- be domiciled in Himachal Pradesh, or children of a Himachal Pradesh government employee be enrolled in a diploma course in Engineering and Technology (including Architecture) or any other equivalent course approved by the All India Council of Technical Education (AICTE) have secured 60% marks in the previous qualifying examination, conducted by a recognised board/university be selected through the Regional Engineering College, Hamirpur, for courses outside Himachal Pradesh be seeking admission to the Engineering College through a competitive entrance exam for courses unavailable in Himachal Pradesh (provided their merit meets the minimum qualifications for the entrance exam) have an annual parent(s)/guardian(s) income of not more than ₹1,500 from all sources (in case of merit-cum-means basis) [ Note :- Guardian income is considered only if both parents are deceased.] be pursuing courses unavailable within Himachal Pradesh, even if they are studying outside the state",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "merit",
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "nsp-technical-education-scholarship-scheme-for-iti-students-himachal-pradesh-2026",
+      "title": "NSP Technical Education Scholarship Scheme for ITI Students, Himachal Pradesh 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/himachal-pradesh-technical-education-scholarship-schemes",
+      "provider": null,
+      "deadline": "2026-11-15",
+      "opens_at": "2026-09-08",
+      "info_url": "https://www.buddy4study.com/page/himachal-pradesh-technical-education-scholarship-schemes",
+      "award_amount": "Up to ₹250 per month",
+      "eligibility": "To be eligible, an applicant must:- be domiciled in Himachal Pradesh belong to the Scheduled Caste (SC), Scheduled Tribe (ST), or Other Backwards Classes (OBC) categories as notified by the State Government be enrolled in Industrial Training Institutes (ITIs) and Women's ITIs in Himachal Pradesh",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "mahindra-saarthi-abhiyaan-2026-27",
+      "title": "Mahindra Saarthi Abhiyaan 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/mahindra-saarthi-abhiyaan",
+      "provider": null,
+      "deadline": "2026-11-30",
+      "opens_at": "2026-10-12",
+      "info_url": "https://www.buddy4study.com/page/mahindra-saarthi-abhiyaan",
+      "award_amount": "Scholarship of INR 10,000",
+      "eligibility": "Girls studying in Class 11, Class 12, Graduation, and Post-Graduation are eligible to apply. Applicants must be daughters/wards of truck drivers . Students from across India are eligible to apply. Children of employees of Buddy4Study or Mahindra & Mahindra Limited are not eligible. Note: If the latest semester results are not available, the previous odd-semester results may be considered for selection.",
+      "description": null,
+      "level": "school",
+      "tags": []
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "sdef-india-scholarship-program-2026-27",
+      "title": "SDEF India Scholarship Program 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/sdef-india-scholarship",
+      "provider": null,
+      "deadline": "2026-11-30",
+      "opens_at": "2026-10-08",
+      "info_url": "https://www.buddy4study.com/page/sdef-india-scholarship",
+      "award_amount": "Upto 50000 for the duration of the course",
+      "eligibility": "Applicants must be taking admission in the first year of a full-time professional undergraduate degree programme in India for the 2026-27 academic year. Applicants must have secured at least 80% marks, or an equivalent CGPA, in Class 12, unless a different course/category-specific threshold is stated in the selection table below. Total annual family income from all sources must not exceed INR 12,00,000. The scholarship is open to the following professional undergraduate programmes: Engineering & Technology: B.Tech./B.E. Medicine: MBBS Dentistry: BDS Architecture: B.Arch . Category-wise Ranking and Selection Eligibility Criteria Applicants must meet the applicable course and category-wise selection criteria given below. Use the table below to check the applicable rank or percentage requirement for your course and category before applying. Exam / Course General OBC SC ST EWS JEE Advanced (IIT students only) Up to 10,000 Up to 4,500 Up to 2,300 Up to 1,100 Up to 1,700 JEE Main (NIT and other Govt institutes) Up to 10,000 Up to 4,000 Up to 2,200 Up to 1,000 Up to 1,600 NEET (MBBS) Up to 20,000 Up to 20,000 Up to 30,000 Up to 40,000 Up to 23,000 BDS (NEET or Equivalent Examinations) 60…",
+      "description": null,
+      "level": "ug",
+      "tags": [
+        "need",
+        "merit",
+        "technical"
+      ]
+    },
+    {
+      "source": "buddy4study",
+      "external_id": "karnataka-ssp-management-nri-tuition-reimbursement-swd-2026",
+      "title": "Karnataka SSP Management & NRI Tuition Reimbursement (SWD), 2026-27",
+      "apply_url": "https://www.buddy4study.com/page/government-of-karnataka",
+      "provider": null,
+      "deadline": "2027-01-31",
+      "opens_at": "2026-08-15",
+      "info_url": "https://www.buddy4study.com/page/government-of-karnataka",
+      "award_amount": "Financial Assistance",
+      "eligibility": "To be eligible, an applicant must: belong to the Scheduled Caste (SC) category have a family annual income of up to ₹10 lakh be admitted to a professional course in a private college be admitted through eligible Management quota, NRI quota, or Private Seat categories in select courses have been promoted to the current academic year Note: Students who are detained or discontinued are not eligible for the reimbursement.",
+      "description": null,
+      "level": "any",
+      "tags": [
+        "need"
+      ]
+    },
+    {
+      "source": "manual",
+      "external_id": "manual-vidyadhan",
+      "title": "Vidyadhan Scholarship (Sarojini Damodaran Foundation)",
+      "provider": "Sarojini Damodaran Foundation",
+      "description": "State-wise scholarships for students who have cleared Class 10, continuing through graduation. Selection is by merit and need.",
+      "award_amount": "Varies by state and course",
+      "eligibility": "Students from low-income families who have completed Class 10 with strong marks. Separate state-wise programmes with their own cut-offs.",
+      "level": "school",
+      "tags": [
+        "need",
+        "merit"
+      ],
+      "deadline": null,
+      "apply_url": "https://www.vidyadhan.org/",
+      "info_url": "https://www.vidyadhan.org/"
+    },
+    {
+      "source": "manual",
+      "external_id": "manual-reliance-foundation-ug",
+      "title": "Reliance Foundation Undergraduate Scholarships",
+      "provider": "Reliance Foundation",
+      "description": "Merit-cum-means undergraduate scholarships awarded on an aptitude test and Class 12 performance.",
+      "award_amount": "Up to INR 2,00,000 over the course",
+      "eligibility": "First-year undergraduate students in India with family income below the stated limit.",
+      "level": "ug",
+      "tags": [
+        "merit",
+        "need"
+      ],
+      "deadline": null,
+      "apply_url": "https://scholarships.reliancefoundation.org/",
+      "info_url": "https://scholarships.reliancefoundation.org/"
+    },
+    {
+      "source": "manual",
+      "external_id": "manual-reliance-foundation-pg",
+      "title": "Reliance Foundation Postgraduate Scholarships",
+      "provider": "Reliance Foundation",
+      "description": "Postgraduate scholarships in computer science, artificial intelligence, energy and life sciences.",
+      "award_amount": "Up to INR 6,00,000 over the course",
+      "eligibility": "Students entering a postgraduate programme in the eligible disciplines at a recognised Indian institution.",
+      "level": "pg",
+      "tags": [
+        "merit",
+        "research"
+      ],
+      "deadline": null,
+      "apply_url": "https://scholarships.reliancefoundation.org/",
+      "info_url": "https://scholarships.reliancefoundation.org/"
+    },
+    {
+      "source": "manual",
+      "external_id": "manual-jn-tata-endowment",
+      "title": "JN Tata Endowment Loan Scholarship",
+      "provider": "JN Tata Endowment for the Higher Education of Indians",
+      "description": "Loan scholarship for Indian graduates pursuing postgraduate study abroad, awarded on academic record and interview.",
+      "award_amount": "Loan scholarship, amount set per awardee",
+      "eligibility": "Indian nationals with a first degree, applying for postgraduate study overseas.",
+      "level": "pg",
+      "tags": [
+        "merit"
+      ],
+      "deadline": null,
+      "apply_url": "https://www.jntataendowment.org/",
+      "info_url": "https://www.jntataendowment.org/"
+    },
+    {
+      "source": "manual",
+      "external_id": "manual-inlaks-shivdasani",
+      "title": "Inlaks Shivdasani Foundation Scholarships",
+      "provider": "Inlaks Shivdasani Foundation",
+      "description": "Scholarships for Indian students taking up full-time postgraduate study at top universities in the US, UK and Europe.",
+      "award_amount": "Up to USD 100,000 (tuition, living and travel)",
+      "eligibility": "Indian citizens resident in India with a strong first degree, normally under 30 years of age.",
+      "level": "pg",
+      "tags": [
+        "merit"
+      ],
+      "deadline": null,
+      "apply_url": "https://www.inlaksfoundation.org/scholarships/",
+      "info_url": "https://www.inlaksfoundation.org/scholarships/"
+    },
+    {
+      "source": "manual",
+      "external_id": "manual-aditya-birla-scholarship",
+      "title": "Aditya Birla Scholarship",
+      "provider": "Aditya Birla Group",
+      "description": "Scholarships for students at select IITs, IIMs, BITS Pilani, XLRI and national law schools.",
+      "award_amount": "Varies by institute",
+      "eligibility": "Students admitted to one of the partner institutes; selection is by academic record and interview.",
+      "level": "pg",
+      "tags": [
+        "merit"
+      ],
+      "deadline": null,
+      "apply_url": "https://www.adityabirlascholars.net/",
+      "info_url": "https://www.adityabirlascholars.net/"
+    },
+    {
+      "source": "manual",
+      "external_id": "manual-sitaram-jindal",
+      "title": "Sitaram Jindal Foundation Scholarship",
+      "provider": "Sitaram Jindal Foundation",
+      "description": "Monthly scholarships across several categories, from Class 11 through professional and postgraduate courses.",
+      "award_amount": "INR 500 to INR 2,500 per month by category",
+      "eligibility": "Students in India meeting the per-category marks and income criteria set out in the foundation's scheme table.",
+      "level": "any",
+      "tags": [
+        "need",
+        "merit"
+      ],
+      "deadline": null,
+      "apply_url": "https://www.sitaramjindalfoundation.org/scholarships.php",
+      "info_url": "https://www.sitaramjindalfoundation.org/scholarships.php"
+    }
+  ]
+}
