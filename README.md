@@ -106,8 +106,23 @@ nothing is lost between opening a form and finishing it.
 | Hosting | Vercel: static frontend + FastAPI as a Python serverless function under `/api` |
 | Schedule | Vercel Cron → `GET /api/cron/refresh`, once daily |
 
-Python 3.12 is the Vercel runtime target. The code is tested on 3.13 locally and
-uses nothing version-specific.
+Python 3.12 is the Vercel runtime target, pinned by the `.python-version` file
+at the repo root. The code is tested on 3.13 locally and uses nothing
+version-specific, but **the pin is load-bearing and must not be removed**:
+Vercel installs with `uv`, which reads that file, and without it the builder
+picks the newest CPython it has. On 3.14 the build fails outright, because
+`lxml` and `psycopg-binary` publish version-specific wheels that currently stop
+at `cp313`:
+
+```
+Because psycopg-binary==3.2.3 has no wheels with a matching Python ABI tag
+(e.g. `cp314`) ... your requirements are unsatisfiable.
+```
+
+If a future Vercel image drops 3.12, the fix is to raise the pin to the newest
+version for which `lxml` and `psycopg-binary` ship wheels, rather than to delete
+the file. (`bcrypt` is not affected either way — it ships `abi3` wheels that work
+on any CPython from 3.9 up.)
 
 ---
 
